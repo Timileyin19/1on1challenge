@@ -1,0 +1,507 @@
+
+.form-sidebar {
+    position: relative;
+    font-family: Open Sans;
+    font-weight: 400;
+    background-image: -webkit-linear-gradient(169deg,#e40015,#750075);
+    color: #cdcbd9;
+    outline: none;
+    border: none;
+    padding: .75rem 1.688rem;
+    margin: 0 .5rem;
+    border-radius: 3.438rem;
+    font-size: 1rem;
+    -webkit-appearance: none !important;
+}
+.normal-word-wrap {
+    word-wrap: normal;
+}
+.to-earn {
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: .063rem solid #8389b7;
+    border-radius: 3.125rem;
+    background: #272e71;
+    padding: .313rem .313rem 3.313rem;
+}
+.myCounter {
+    font-family: Open Sans;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: .938rem;
+}
+.investmentCounter {
+    background: #880065;
+    background: linear-gradient(90deg,#880065,#d70021);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 600;
+    font-size: 2.5rem;
+    font-family: Open Sans
+}
+.sportIcons {
+    font-size: 4rem;
+    color: #9E0051;
+}
+.sportIcons:hover {
+    color: rgb(236, 90, 132);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none !important;
+}
+table.table.table-hover.table-striped.table-bordered {
+    background: #fff;
+}
+.table-hover tbody tr:hover{
+    cursor: pointer;
+    background-color:#e0f3ff;
+} 
+table.sportIconstable thead tr {
+    background: #EEF4FB;
+    vertical-align: center;
+}
+table.sportIcons tbody tr td {
+    vertical-align: center;
+}
+.header-right-list:hover {
+    cursor: pointer;
+}
+.latest-games-heading {
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 3.125rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+    background: #880065;
+    background: linear-gradient(90deg,#880065,#d70021);
+    color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+    margin-bottom: .25rem;
+}
+.text-pink {
+    color: #e15218;
+}
+.btn-design {
+    font-family: Open Sans;
+    text-transform: uppercase;
+    font-size: .875rem;
+    color: #fff;
+    text-decoration: none;
+    padding: .75rem 1.875rem;
+    border-radius: 1.563rem;
+    background-image: linear-gradient(108deg,#7b19cb,#3b26db 86%);
+    background-image: -ms-linear-gradient(108deg,#7b19cb 0,#3b26db 86%);
+    box-shadow: 0 0.625rem 0.938rem 0 rgba(59,55,188,.5);
+    border: .125rem solid #f50;
+    transition: all .3s ease-in;
+}
+
+/* Dashboard */
+.dashboardBody {
+    background: #152036 !important;     /* due to the bootstrap snippet used */
+    padding-top: 80px; 
+}
+.sticky-top {
+    top: 80px;
+}
+.hr-line {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #C9CDD7;
+}
+.myCard {
+    /* border-bottom: 1.5px solid blue; */
+    background-color: #1b2a47;
+}
+.dashboard-nav {
+    height: 62px;
+    background: #1b2a47 !important;
+}
+.dashboard-bg {
+    background: #1b2a47; 
+    color: #fff;
+    padding: 1.5rem;
+}
+.progress-mini {
+    height: 5px !important;
+}
+.font-increase {
+    font-size: 2rem;
+}
+.btn-mySuccess {
+    background: #58B957;
+    color: #fff;
+}
+.btn-myInfo {
+    color: #fff;
+    background: #56C0E0;
+}
+.myBtn {
+    background: #152036;
+    color: #fff;
+}
+
+.btn.btn-mySuccess:hover, .btn.btn-myInfo:hover {
+    background: #152036;
+    color: #fff;
+}
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #56C0E0;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    background: #1b2a47;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item {
+    color: #fff
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item:hover {
+    color: #fff;
+}
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}
+.dropdown-item:hover {
+    background: #152036;  
+}
+.myTable thead tr th,.myTable tbody tr td {
+    border-color: #152036 !important;
+}
+ul.myPagination li a {
+    background: #152036 !important; 
+    border: none; 
+}
+ul.myPagination li a:hover {
+    background: #152036 !important; 
+    border: 1px solid #fff; 
+}
+.form-control {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    /* color: #495057; */
+    color: #fff !important;
+    background-color: #152036 !important;
+    /* border: 1px solid #ced4da; */
+    border: none !important;
+    /* border-radius: .25rem; */
+    /* border-radius: 0 !important; */
+}
+.float-right a {
+    padding: 6px;
+    font-size: 12px;
+    color: #fff;
+    background: #152036;
+}
+span a {
+    padding: 6px;
+    color: #fff;
+    background: #152036;
+}
+span a:hover {
+    padding: 6px;
+    color: #fff;
+    background: #152036;
+}
+
+/* Form Field */
+.my-input-dropdown {
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: .063rem solid #8389b7;
+    border-radius: 3.125rem;
+    background: #272e71;
+    padding: .313rem .313rem 3.313rem;
+}
+
+.my-main-form {
+    float: left;
+    background: #272e71;
+    outline: none;
+    border: none;
+    color: #fefefe;
+    width: 45%;
+    padding: .75rem 0;
+    margin-left: 1.5rem;
+}
+button.my-form-btn-dropdown {
+    position: relative;
+    font-family: Open Sans;
+    font-weight: 400;
+    background-image: -webkit-linear-gradient(169deg,#e40015,#750075);
+    color: #cdcbd9;
+    outline: none;
+    border: none;
+    padding: .75rem 1.688rem;
+    margin: 0 .5rem;
+    border-radius: 3.438rem;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    word-wrap: normal;
+}
+.my-form-dropdown {
+    display: inline-block;
+    position: relative;
+    float: right;
+    background-image: -webkit-linear-gradient(169deg,#e40015,#750075);
+    color: #cdcbd9;
+    border-radius: 1.875rem;
+    outline: none;
+    border: .063rem solid #2d294c;
+}
+
+
+/* bootstrap snippet */
+
+  /* Profile container */
+  .profile {
+    margin-top: 12px !important;
+  }
+  
+  /* Profile sidebar */
+  .profile-sidebar {
+    padding: 20px 0 10px 0 !important;
+    background: #1b2a47 !important;
+    height: 100%;
+  }
+  
+  .profile-userpic img {
+    float: none !important;
+    margin: 0 auto !important;
+    width: 50% !important;
+    height: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+  }
+  
+  .profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .profile-usertitle-name {
+    color: #5a7391;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+  
+  .profile-usertitle-job {
+    text-transform: uppercase;
+    color: #5b9bd1;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .profile-userbuttons {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .profile-userbuttons .btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 15px;
+    margin-right: 5px;
+  }
+  
+  .profile-userbuttons .btn:last-child {
+    margin-right: 0px;
+  }
+      
+  .profile-usermenu {
+    margin-top: 30px !important;
+  }
+  
+  .profile-usermenu ul li {
+    border-bottom: 1px solid #152036 !important;
+  }
+  
+  .profile-usermenu ul li:last-child {
+    border-bottom: none !important;
+  }
+  
+  .profile-usermenu ul li a {
+    color: #fff !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+  }
+  
+  .profile-usermenu ul li a i {
+    margin-right: 8px;
+    font-size: 14px;
+    margin-left: 8px;
+  }
+  
+  .profile-usermenu ul li a:hover {
+    background-color: #152036;
+    color: #5b9bd1;
+  }
+  
+  .profile-usermenu ul li.active {
+    border-bottom: none;
+  }
+  
+  .profile-usermenu ul li.active a {
+    /* color: #5b9bd1; */
+    color: #fff;
+    background-color: #152036;
+    /* border-left: 2px solid #58B957; */
+    margin-left: 0px;
+  }
+  
+  /* Profile Content */
+  .profile-content {
+    padding: 20px;
+    background: #fff;
+    /* min-height: 460px; */
+    height: 100%;
+  }
+
+  /* After Importing to Angular  */
+  .banner-section .overlay {
+      padding: 9.5rem 0 !important;
+  }
+
+  .invest-section .overlay {
+    padding: 5rem 0 !important;
+  }
+
+  
+
+
+
+/* BS - Simple Admin Dashboard */
+/* #wrapper {
+    width: 100%;
+    margin-top:50px;
+}
+
+#page-wrapper {
+    padding: 15px 15px;
+    min-height: 600px;
+    background:#F3F3F3;
+   
+}
+#page-inner {
+    width:100%;
+    margin:10px 20px 10px 0px;
+    background-color:#fff!important;
+    padding:10px;
+    min-height:1050px;
+}
+.pad-top {
+    padding-top:15px;
+}
+.sidebar-collapse .nav {
+	padding:0;
+    padding-top:50px;
+}
+
+.sidebar-collapse > .nav > li > a {
+	padding:15px 10px;
+    color: #214761;
+font-weight: 900;
+font-size: 16px;
+}
+.sidebar-collapse > .nav > li {
+	border-bottom:1px solid #e1e1e1;
+}
+.sidebar-collapse .nav > li > a:hover,
+.sidebar-collapse .nav > li > a:focus {
+	
+	background:#F3F3F3;
+	outline:0;
+}
+
+.navbar-side {
+	border:none;
+	background-color: #fff;
+	
+}
+.navbar-inverse {
+
+background-color: #214761;
+border-color: #F0F0F0;
+min-height: 80px;
+}
+
+
+.nav > li > a > i {
+    margin-right:10px;
+}
+.logout-spn {
+    float:right;
+    color:#fff;
+    font-size:25px;
+    font-weight:800;
+    margin:20px;
+    margin: 10px 25px 10px 50px;
+}
+    .logout-spn a {
+        text-decoration:none;
+    }
+.active-link {
+    background-color:#f3f3f3;
+}
+.div-square {
+    padding:5px;
+    border:3px double #e1e1e1;
+    -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+    border-radius:8px;
+    margin:5px;
+
+}
+
+.div-square> a,.div-square> a:hover {
+    color:#808080;
+     text-decoration:none;
+}
+.footer {
+    background-color:#214761;
+    width:100%;
+    color:#fff;
+    padding:20px 50px 20px 50px;
+     padding-left:20px;
+}
+
+
+    .footer > a, .footer>a:hover {
+       
+        color:#fff;
+    }
+
+@media(min-width:768px) {
+        #page-wrapper{
+                  margin: 0 0 0 260px;
+           padding: 15px 30px;
+           min-height: 1050px;
+           
+       }
+       
+       
+       .navbar-side {
+           z-index: 1;
+           position: absolute;
+           width: 260px;
+          
+       }
+   
+    
+   } */
+
+
+
+

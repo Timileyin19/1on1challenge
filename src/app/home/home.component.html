@@ -1,0 +1,2529 @@
+<!--Start Preloader-->
+<!-- <div class="preloader" id="preloader"></div> -->
+<!--End Preloader-->
+
+<!-- header top begin -->
+<header class="header-section" id="header-section">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 d-flex justify-content-start reunir-content-center">
+                    <div class="header-left">
+                        <ul>
+                            <li class="header-left-list">
+                                <p class="header-left-text">
+                                    <span class="header-left-icon">
+                                        <i class="icofont-headphone-alt"></i>
+                                    </span>+234 90675432
+                                </p>
+                            </li>
+                            <li class="header-left-list">
+                                <p class="header-left-text">
+                                    <span class="header-left-icon">
+                                        <i class="icofont-email"></i>
+                                    </span>support@elsporty.com
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 d-flex justify-content-end reunir-content-center">
+                    <div class="header-right">
+                        <ul>
+                            <!-- <li class="header-right-list">
+                                <div class="dropdown show header-dropdown">
+                                    <span class="header-left-icon"><i class="icofont-web"></i></span>
+                                    <select class="selectpicker" name="languages" tabindex="-98">
+                                        <option value="">English</option>
+                                        <option value="1">Bengali</option>
+                                        <option value="2">Dutch</option>
+                                    </select>
+                                </div>
+                            </li> -->
+                            
+                            <!-- NB: This will only show if the User is Logged-In already -->
+                            <li class="header-right-list" [routerLink]="['/dashboard']">
+                                <p class="header-right-text"><span class="header-right-icon carticon"><i class="ren-people1"></i></span>My Dashboard</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nav top begin -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light reunir-navbar">
+        <div class="container">
+
+            <div class="logo-section">
+                <a class="logo-title navbar-brand" href="#"><img src="../../assets/img/logo.png" alt="logo">REUNIR</a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icofont-navigation-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse nav-main justify-content-end" id="navbarNav">
+                <ul class="navbar-nav" id="primary-menu">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="#header-section">HOME
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#games-and-sports">GAMES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">GUIDE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recent-winners">WINNERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">TESTIMONIALS</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us-section">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-side-box">
+                <a class="join-btn" [routerLink]="['/register']">JOIN NOW</a>
+            </div>
+        </div>
+    </nav>
+    <!-- nav top end -->
+</header>
+<!-- header top end -->
+
+<!-- banner top begin -->
+<section class="banner-section">
+    <div class="overlay" style="background-image: url('../../assets/img/header-bg.jpg')">
+        <div class="container">
+            <div class="total-slide">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <div class="banner-text">
+                            <!-- <h1 class="font-light">Take Your</h1> -->
+                            <h2 class="font-bold display-3">THE NUMBER ONE SPORT</h2>
+                            <h1 class="font-regular">CHALLENGE PLATFORM</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center text-justify">
+                        <h5 class="banner-bottom-text">Where you can predict the outcome of a Game and stake on it. You can also challenge someone's else's prediction, invite someone to challenge your prediction. Whoever predict right wins and get all the money. </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center text-muted text-white">
+                        <p><strong>Remember Only One Winner</strong></p>
+                        <div class="get-start">
+                            <a [routerLink]="['/login']">GET STARTED</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="statics-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="single-statics no-border">
+                            <div class="icon-box">
+                                <i class="ren-reguser"></i>
+                            </div>
+                            <div class="text-box">
+                                <span class="myCounter">300</span>
+                                <h4>Registered Members</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="single-statics">
+                            <div class="icon-box">
+                                <i class="ren-web"></i>
+                            </div>
+                            <div class="text-box">
+                                <span class="myCounter">15</span>
+                                <h4>Countries</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="single-statics">
+                            <div class="icon-box">
+                                <i class="ren-withdraw"></i>
+                            </div>
+                            <div class="text-box">
+                                <span class="myCounter">15</span>
+                                <h4>Sport Categories</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="single-statics">
+                            <div class="icon-box">
+                                <i class="ren-people"></i>
+                            </div>
+                            <div class="text-box">
+                                <span class="myCounter">120</span>
+                                <h4>Games Posted</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner top end -->
+
+<!-- calculator top begin -->
+<section class="calculate-aria">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6">
+                <div class="calculate-left">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                            <div class="icon-box">
+                                <i class="ren-calculator"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="form-group">
+                                <h2 class="amount">Stake Amount</h2>
+                                <!-- <div class="input-dropdown">
+                                    <input type="text" name="text" placeholder="Enter Amount to Stake" class="main-form calculator-invest">
+                                    <div class="form-dropdown">
+                                        <select class="form-btn-dropdown calculator-profit">
+                                            <option value="1">90%</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="my-input-dropdown">
+                                    <input type="text" name="text" placeholder="Enter Amount to Stake" class="my-main-form calculator-invest">
+                                    <div class="my-form-dropdown">
+                                        <button class="my-form-btn-dropdown calculator-profit">
+                                           Check Amount to Win
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="calculate-right">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="text-box">
+                                <span class="investmentCounter">50, 000</span>
+                                <h4>Win</h4>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="text-box">
+                                <span class="counter calculator-result-weekly">1484</span>
+                                <h4>Weekly Profit</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="text-box">
+                                <span class="counter calculator-result-monthly">6360</span>
+                                <h4>Monthly Profit</h4>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- calculator top end -->
+
+<!-- Sports and Games Section -->
+<section class="transaction-section mb-5" id="games-and-sports" style="margin-top: 6rem;">
+    <div class="text-center">
+       <h2 class="latest-games-heading">Latest Games</h2>
+    </div>
+        <div class="right-img">
+            <img class="right-ellipse1" src="../../assets/../../assets/img/transaction-bg-ellipse-01.png" alt="#">
+            <img class="right-shape1" src="../../assets/../../assets/img/transaction-bg-shape-01.png" alt="#">
+            <img class="right-shape2" src="../../assets/../../assets/img/transaction-bg-shape-01.png" alt="#">
+            <img class="right-ellipse2" src="../../assets/../../assets/img/transaction-bg-ellipse-02.png" alt="#">
+        </div>
+        <!-- <div class="left-img">
+            <img class="left-ellipse1" src="../../assets/img/transaction-bg-ellipse-03.png" alt="#">
+            <img class="left-ellipse2" src="../../assets/img/transaction-bg-ellipse-03.png" alt="#">
+            <img class="left-ellipse3" src="../../assets/img/transaction-bg-ellipse-03.png" alt="#">
+            <img class="left-shape1" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+            <img class="left-shape2" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+            <img class="left-shape3" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+            <img class="left-shape4" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+        </div> -->
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <!-- Sports Icons -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <a href=""><i class="icofont-trophy sportIcons"></i></a>
+                            <p>All Sports</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href=""><i class="icofont-football sportIcons"></i></a>
+                            <p>Football</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href=""><i class="icofont-basketball sportIcons"></i></a>
+                            <p>Basket Ball</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href=""><i class="icofont-tennis sportIcons"></i></a>
+                            <p>Tennis</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href=""><i class="icofont-muscle sportIcons"></i></a>
+                            <p>Boxing</p>
+                        </div>
+                        <div class="col-sm-2 text-center">
+                            <a href=""><i class="icofont-golf sportIcons"></i></a>
+                            <p>Golf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Sports and Games Table -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <table style="width: 95%; align-content: center;" class="sportIconstable table table-hover table-striped table-bordered" role="grid">
+                        <thead>
+                            <tr role="row">
+                                <th> Today's Game </th>
+                                <th> Sport Category </th>
+                                <th> Competition/League </th>
+                                <th> Time </th>
+                                <th> Total Predictions </th>
+                            </tr>
+                        </thead>
+                                <tbody>
+                                    <tr role="row">
+                                        <td>Arsenal : Chelsea</td>
+                                        <td>Football</td>
+                                        <td>Premier League</td>
+                                        <td>21:00 (GMT)</td>
+                                        <td>200</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Big Show : Mighty Jet </td>
+                                        <td>Boxing</td>
+                                        <td>WWE Heavy Weight</td>
+                                        <td>13:00 (GMT)</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Spain : Portugal</td>
+                                        <td>Football</td>
+                                        <td>World Cup</td>
+                                        <td>21:00 (GMT)</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Serena : Rodger</td>
+                                        <td>Tennis</td>
+                                        <td>French Open</td>
+                                        <td>12:00 (GMT)</td>
+                                        <td>300</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Arsenal : Chelsea</td>
+                                        <td>Football</td>
+                                        <td>Premier League</td>
+                                        <td>21:00 (GMT)</td>
+                                        <td>200</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Big Show : Mighty Jet </td>
+                                        <td>Boxing</td>
+                                        <td>WWE Heavy Weight</td>
+                                        <td>13:00 (GMT)</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Spain : Portugal</td>
+                                        <td>Football</td>
+                                        <td>World Cup</td>
+                                        <td>21:00 (GMT)</td>
+                                        <td>100</td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>Serena : Rodger</td>
+                                        <td>Tennis</td>
+                                        <td>French Open</td>
+                                        <td>12:00 (GMT)</td>
+                                        <td>300</td>
+                                    </tr>
+                            </tbody>
+                            </table>
+                </div>
+            </div>
+            
+            <!-- pagination -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2">   <!-- class="part-cart" -->
+                        <!-- <a href="#">Browse More</a> -->
+                        <div>
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Sports and Games Section end -->
+
+<!-- about section begin -->
+<!-- <section class="about-section navigation" id="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="about-left">
+                    <div class="about-text">
+                        <h5 class="about-title">WELCOME TO REUNIR</h5>
+                        <h2 class="about-subtitle">A few words About Us</h2>
+                        <h5 class="about-details">To meet <span>today's challenges</span>, we've created a unique fund management system</h5>
+                        <p class="about-description">Reunir - a private financial company specializing in sports betting. Our system is risk-free thanks to the development and improvement of semi-automatic system of rates. We upgraded our automatic system so that the last step before the rate is now done by our operators.</p>
+                    </div>
+
+                    <div class="about-box">
+                        <div class="row text-center">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-about-box">
+                                    <div class="icon-box-outer bg-eff">
+                                        <div class="icon-box">
+                                            <i class="ren-efficiency"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Efficiency</h3>
+                                    <div class="hover-box hover-left">
+                                        <a href="#">READ MORE<i class="ren-arrowright"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-about-box">
+                                    <div class="icon-box-outer bg-ex">
+                                        <div class="icon-box">
+                                            <img src="../../assets/img/expierence.svg" alt="#">
+                                        </div>
+                                    </div>
+                                    <h3>Expierence</h3>
+                                    <div class="hover-box hover-top">
+                                        <a href="#">READ MORE<i class="ren-arrowright"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-about-box">
+                                    <div class="icon-box-outer bg-security">
+                                        <div class="icon-box">
+                                            <i class="ren-security"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Security</h3>
+                                    <div class="hover-box hover-right">
+                                        <a href="#">READ MORE<i class="ren-arrowright"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-about-box">
+                                    <div class="icon-box-outer bg-trans">
+                                        <div class="icon-box">
+                                            <i class="ren-transparent"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Transparent</h3>
+                                    <div class="hover-box hover-left">
+                                        <a href="#">READ MORE<i class="ren-arrowright"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-about-box">
+                                    <div class="icon-box-outer bg-simple">
+                                        <div class="icon-box">
+                                            <i class="ren-simple"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Simple</h3>
+                                    <div class="hover-box hover-bottom">
+                                        <a href="#">READ MORE<i class="ren-arrowright"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-about-box">
+                                    <div class="icon-box-outer bg-com">
+                                        <div class="icon-box">
+                                            <i class="ren-compliant"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Compliant</h3>
+                                    <div class="hover-box hover-right">
+                                        <a href="#">READ MORE<i class="ren-arrowright"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="about-right">
+                    <div class="video-box">
+                        <img src="../../assets/img/about-bg.jpg" alt="#">
+                        <div class="icon-box">
+                            <a href="https://www.youtube.com/watch?v=jvrayw6wANg" class="video-play-btn popup-video"><i class="ren-playicon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- about section end -->
+
+<!-- choose section begin -->
+<!-- <section class="choose-section">
+    <div class="overlay">
+        <div class="container-fruit text-center">
+            <div class="row mr-0 ml-0 d-flex justify-content-center">
+                <div class="col-xl-8 col-lg-12">
+                    <div class="choose-text">
+                        <h5 class="choose-title">Boost Your Mouney</h5>
+                        <h2 class="choose-subtitle">Why Should Choose Us?</h2>
+                        <p class="choose-title-describe">Our service gives you better result and savings, as per your requirement and you can manage your investments from anywhere either form home or work place, at any time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choose-section-carousel">
+
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/daily-income.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Daily Income</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/withdraw1.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">FASTEST PAYMENTS</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/invest-fild.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Easy to Use</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/security.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">HIGH SECURITY</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/customer-service.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">24/7 Support</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/daily-income.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Daily Income</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/withdraw1.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">FASTEST PAYMENTS</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/invest-fild.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Easy to Use</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/security.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">HIGH SECURITY</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/customer-service.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">24/7 Support</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/daily-income.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Daily Income</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/withdraw1.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">FASTEST PAYMENTS</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/invest-fild.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Easy to Use</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/security.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">HIGH SECURITY</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/customer-service.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">24/7 Support</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/daily-income.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Daily Income</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/withdraw1.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">FASTEST PAYMENTS</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/invest-fild.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Easy to Use</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/security.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">HIGH SECURITY</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/customer-service.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">24/7 Support</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/daily-income.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Daily Income</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/withdraw1.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">FASTEST PAYMENTS</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/invest-fild.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Easy to Use</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/security.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">HIGH SECURITY</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/customer-service.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">24/7 Support</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/daily-income.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Daily Income</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/withdraw1.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">FASTEST PAYMENTS</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/invest-fild.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">Easy to Use</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/security.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">HIGH SECURITY</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="single-item">
+                        <div class="icon-box">
+                            <img src="../../assets/img/customer-service.svg" alt="#">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="single-item-title">24/7 Support</h2>
+                            <h3 class="single-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- choose section end -->
+
+<!-- invest section begin -->
+<section class="invest-section" style="margin-top: 2.375rem;" id="how-it-works">
+    <div class="overlay">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="invest-text">
+                        <h5 class="invest-title"></h5>
+                        <h2 class="invest-subtitle">How It Works</h2>
+                        <p class="invest-title-describe">It’s a simple way to start predict and win.Just sign up within 30 seconds. Pick an amount you can afford, and predict any game of your choice.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center reunir-content-center">
+                    <div class="single-box location-left">
+                        <div class="img-box">
+                            <div class="font-side">
+                                <img src="../../assets/img/sign-up.svg" alt="#">
+                                <!-- <i class="icofont-money"></i> -->
+                            </div>
+                            <div class="back-side">
+                                <img src="../../assets/img/sign-up.svg" alt="#">
+                            </div>
+                        </div>
+                        <div class="text-box">
+                            <a href="#">FIRST STEP<i class="ren-arrowright"></i></a>
+                            <h3>Sign Up</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center reunir-content-center">
+                    <div class="single-box">
+                        <div class="img-box">
+                            <div class="font-side">
+                                <img src="../../assets/img/deposit.svg" alt="#">
+                                <!-- <i class="icofont-game-pad"></i> -->
+                            </div>
+                            <div class="back-side">
+                                <img src="../../assets/img/deposit.svg" alt="#">
+                                <!-- <i class="icofont-game-pad"></i> -->
+                            </div>
+                        </div>
+                        <div class="text-box">
+                            <a href="#">SECOND STEP<i class="ren-arrowright"></i></a>
+                            <h3>Deposit into Wallet</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center reunir-content-center">
+                    <div class="single-box location-right">
+                        <div class="img-box">
+                            <div class="font-side">
+                                <img src="../../assets/img/withdraw-1.svg" alt="#">
+                                <!-- <i class="icofont-trophy"></i> -->
+                            </div>
+                            <div class="back-side">
+                                <img src="../../assets/img/withdraw-1.svg" alt="#">
+                            </div>
+                        </div>
+                        <div class="text-box">
+                            <a href="#">THIRD STEP<i class="ren-arrowright"></i></a>
+                            <h3>Play (Predict/Challenge) and Win</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- invest section end -->
+
+<!-- advantage section begin -->
+<section class="advantage-section">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="advantage-text">
+                        <h5 class="advantage-title">Your Biggest</h5>
+                        <h2 class="advantage-subtitle">Advantages</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                    <div class="single-box">
+                        <div class="icon-box">
+                            <i class="ren-team"></i>
+                        </div>
+                        <div class="text-box">
+                            <h2>1 PREDICTOR AND 1 CHALLENGER</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                    <div class="single-box">
+                        <div class="icon-box">
+                            <i class="ren-profitable-plan"></i>
+                        </div>
+                        <div class="text-box">
+                            <h2>90% WIN</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                    <div class="single-box">
+                        <div class="icon-box">
+                            <i class="ren-control-panel"></i>
+                        </div>
+                        <div class="text-box">
+                            <h2>24/7 WITHDRAWAL</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- advantage section end -->
+
+<!-- investment section begin -->
+<!-- <section class="investment-section" id="investment-section">
+    <div class="overlay">
+        <div class="container text-center">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="investment-text">
+                        <h5 class="investment-title">INVESTMENT OFFER</h5>
+                        <h2 class="investment-subtitle">Our Investment Plans</h2>
+                        <p class="investment-title-describe">Reunir provides a straightforward and transparent mechanism to attract investments and make more profits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="investment-section-carousel">
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit1.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>6</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$10</b></span>
+                                        <span class="right">Max.: <b>$249</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit2.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>7</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$250</b></span>
+                                        <span class="right">Max.: <b>$9999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit3.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$1000</b></span>
+                                        <span class="right">Max.: <b>$4999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit4.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$5k</b></span>
+                                        <span class="right">Max.: <b>$10k</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit1.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>6</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$10</b></span>
+                                        <span class="right">Max.: <b>$249</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit2.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>7</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$250</b></span>
+                                        <span class="right">Max.: <b>$9999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit3.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$1000</b></span>
+                                        <span class="right">Max.: <b>$4999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit4.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$5k</b></span>
+                                        <span class="right">Max.: <b>$10k</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit1.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>6</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$10</b></span>
+                                        <span class="right">Max.: <b>$249</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit2.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>7</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$250</b></span>
+                                        <span class="right">Max.: <b>$9999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit3.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$1000</b></span>
+                                        <span class="right">Max.: <b>$4999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit4.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$5k</b></span>
+                                        <span class="right">Max.: <b>$10k</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit1.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>6</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$10</b></span>
+                                        <span class="right">Max.: <b>$249</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit2.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>7</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$250</b></span>
+                                        <span class="right">Max.: <b>$9999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit3.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$1000</b></span>
+                                        <span class="right">Max.: <b>$4999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit4.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$5k</b></span>
+                                        <span class="right">Max.: <b>$10k</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit1.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>6</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$10</b></span>
+                                        <span class="right">Max.: <b>$249</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit2.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>7</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$250</b></span>
+                                        <span class="right">Max.: <b>$9999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit3.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$1000</b></span>
+                                        <span class="right">Max.: <b>$4999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit4.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$5k</b></span>
+                                        <span class="right">Max.: <b>$10k</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit1.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>6</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$10</b></span>
+                                        <span class="right">Max.: <b>$249</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit2.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>7</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$250</b></span>
+                                        <span class="right">Max.: <b>$9999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit3.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$1000</b></span>
+                                        <span class="right">Max.: <b>$4999</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="single-item">
+                                <div class="single-image">
+                                    <img src="../../assets/img/deposit-bg.jpg" alt="#">
+                                </div>
+                                <div class="icon-box">
+                                    <img src="../../assets/img/deposit4.svg" alt="#">
+                                </div>
+                                <div class="part-prize">
+                                    <span class="percentage"><b>8</b>%</span>
+                                    <h3>Daily For Even</h3>
+                                    <h4 class="min-max">
+                                        <span class="left">Min. : <b>$5k</b></span>
+                                        <span class="right">Max.: <b>$10k</b></span>
+                                    </h4>
+                                </div>
+                                <div class="part-cart">
+                                    <a href="#">Make Deposit</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- investment section end -->
+
+<!-- calculator bottom begin -->
+<!-- <section class="calculate-aria-second">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="calculate-left">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                            <div class="icon-box">
+                                <i class="ren-calculator"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="form-group">
+                                <h2 class="amount">Enter Investment Amount</h2>
+                                <div class="input-dropdown">
+                                    <input type="text" name="text" placeholder="$200" class="main-form calculator-area-invest">
+                                    <div class="form-dropdown">
+                                        <select class="form-btn-dropdown calculator-area-profit">
+                                            <option value="1">1% Daily For Ever</option>
+                                            <option value="2">2% Daily For Ever</option>
+                                            <option value="3">3% Daily For Ever</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-10 text-center">
+                <div class="calculate-right">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="text-box">
+                                <span class="counter calculator-result-area-daily">212</span>
+                                <h4>Daily Profit</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="text-box">
+                                <span class="counter calculator-result-area-weekly">1484</span>
+                                <h4>Weekly Profit</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="text-box">
+                                <span class="counter calculator-result-area-monthly">6360</span>
+                                <h4>Monthly Profit</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- calculator bottom end -->
+
+<!-- affiliate section begin -->
+<!-- <section class="affiliate-section" id="affiliate-section">
+    <div class="overlay">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="affiliate-text">
+                        <h5 class="affiliate-title">What You’ll Get As</h5>
+                        <h2 class="affiliate-subtitle">An Affiliate Partner</h2>
+                        <p class="affiliate-title-describe">We give you the opportunity to earn money by recommending our website to others. You can start
+                            earning money even if you do not invest. Promote our website wherever you are. Create posts on online
+                            forums and social networks. Remember to use the referral link. Build your structure and receive
+                            a commission from three levels whenever someone makes a deposit.
+                            Earnings from the affiliate program are immediately available in the account balance. You can
+                            invest or withdraw funds at any time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="part-cart">
+                        <a href="#">I want to Join</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- affiliate section end -->
+
+<!-- referral section begin -->
+<!-- <section class="referral-section">
+    <div class="container">
+        <div class="row referral-section-item">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="referral-img">
+                    <img src="../../assets/img/referral-img.png" alt="#">
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10">
+                <div class="referral-section-right">
+                    <div class="referral-text">
+                        <h5 class="referral-title">Referral commission and</h5>
+                        <h2 class="referral-subtitle">Membership Level</h2>
+                        <p class="referral-title-describe">Refferal Commmission and Membership Levels are of 3 levels as below</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-11 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="referral-single-item">
+                                        <div class="icon-box">
+                                            <i class="ren-people1"></i>
+                                        </div>
+                                        <div class="text-box">
+                                            <span class="percentage">8%</span>
+                                            <h4 class="item-text">Direct Referral</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="referral-single-item">
+                                        <div class="icon-box">
+                                            <i class="ren-people2 bg-second"></i>
+                                        </div>
+                                        <div class="text-box">
+                                            <span class="percentage">4%</span>
+                                            <h4 class="item-text">Second Line</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="referral-single-item">
+                                        <div class="icon-box">
+                                            <i class="ren-people3 bg-third"></i>
+                                        </div>
+                                        <div class="text-box">
+                                            <span class="percentage">2%</span>
+                                            <h4 class="item-text">Third Line</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- referral section end -->
+
+<!-- deposit section begin -->
+<!-- <section class="deposit-section">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="deposit-text">
+                    <h5 class="deposit-title">Convenient Money</h5>
+                    <h2 class="deposit-subtitle">Deposit & Withdrawal</h2>
+                    <p class="deposit-title-describe">Depositing or withdrawing money is simple.We support several payment methods, which depend on what country your payment account is located in.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-5 col-sm-12 reunir-content-center">
+                <div class="row d-flex justify-content-start">
+                    <div class="col-lg-8">
+                        <div class="payment-methods-outer">
+                            <div class="payment-methods">
+                                <div class="icon-gallery">
+                                    <div class="icon-box">
+                                        <div class="icon-img">
+                                            <img src="../../assets/img/card-icon.png" alt="#">
+                                        </div>
+                                        <h5 class="icon-title">Credit Card</h5>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="icon-img">
+                                            <img src="../../assets/img/paypal.png" alt="#">
+                                        </div>
+                                        <h5 class="icon-title">Paypal</h5>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="icon-img">
+                                            <img src="../../assets/img/bitcoin.png" alt="#">
+                                        </div>
+                                        <h5 class="icon-title">Bitcoin</h5>
+                                    </div>
+                                </div>
+                                <div class="icon-gallery">
+                                    <div class="icon-box">
+                                        <div class="icon-img">
+                                            <img src="../../assets/img/litecoin.png" alt="#">
+                                        </div>
+                                        <h5 class="icon-title">Litecoin</h5>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="icon-img">
+                                            <img src="../../assets/img/ethereum.png" alt="#">
+                                        </div>
+                                        <h5 class="icon-title">Ethereum</h5>
+                                    </div>
+                                    <div class="icon-box">
+                                        <div class="icon-img">
+                                            <img src="../../assets/img/ripple.png" alt="#">
+                                        </div>
+                                        <h5 class="icon-title">Ripple</h5>
+                                    </div>
+                                </div>
+                                <div class="link-box">
+                                    <a href="#">View All Option</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-7 col-sm-12 mt-4">
+                <div class="deposit-section-right">
+                    <div class="icon-box-outer">
+                        <div class="icon-box">
+                            <i class="ren-withdraw2"></i>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <h2 class="icon-title">No Limit</h2>
+                        <p class="icon-title-describe">Unlimited maximum withdrawal amount</p>
+                    </div>
+                </div>
+                <div class="deposit-section-right">
+                    <div class="icon-box-outer">
+                        <div class="icon-box icon-box-orange">
+                            <i class="ren-deposit5"></i>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <h2 class="icon-title">Withdrawal in 24 /7</h2>
+                        <p class="icon-title-describe">Deposit – instantaneous</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- deposit section end -->
+
+<!-- transaction section begin -->
+<section style="margin-top: 6rem;" class="transaction-section" id="recent-winners">
+    <div class="right-img">
+        <img class="right-ellipse1" src="../../assets/img/transaction-bg-ellipse-01.png" alt="#">
+        <img class="right-shape1" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+        <img class="right-shape2" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+        <img class="right-ellipse2" src="../../assets/img/transaction-bg-ellipse-02.png" alt="#">
+    </div>
+    <div class="left-img">
+        <img class="left-ellipse1" src="../../assets/img/transaction-bg-ellipse-03.png" alt="#">
+        <img class="left-ellipse2" src="../../assets/img/transaction-bg-ellipse-03.png" alt="#">
+        <img class="left-ellipse3" src="../../assets/img/transaction-bg-ellipse-03.png" alt="#">
+        <img class="left-shape1" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+        <img class="left-shape2" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+        <img class="left-shape3" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+        <img class="left-shape4" src="../../assets/img/transaction-bg-shape-01.png" alt="#">
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+                <div class="transaction-text text-center">
+                    <h5 class="transaction-title"></h5>
+                    <h2 class="transaction-subtitle">Recent Winners</h2>
+                    <p class="transaction-title-describe">For every Game played on this platformm there is always a winner. Here is a list of our recent winners in the past few days Games.</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row d-flex justify-content-center">
+            <div class="col-lg-7 col-md-11">
+
+                <ul class="nav nav-pills mb-3 justify-content-center transaction-bnt-outline" id="transaction-pills-tab" role="tablist">
+                    <li class="nav-item transaction-nav-item">
+                        <a class="nav-link transaction-nav-link active" id="transaction-pills-deposits-tab" data-toggle="pill" href="#pills-deposits" role="tab" aria-controls="pills-deposits" aria-selected="true">
+                            <span class="d-flex align-items-center"><i class="ren-deposits d-flex align-items-center"></i>LAST<br>DEPOSITS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item transaction-nav-item">
+                        <a class="nav-link transaction-nav-link" id="transaction-pills-withdrawal-tab" data-toggle="pill" href="#pills-withdrawals" role="tab" aria-controls="pills-withdrawal" aria-selected="false">
+                            <span class="d-flex align-items-center"><i class="ren-investo d-flex align-items-center"></i>TOP<br>WITHDRAWALS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item transaction-nav-item">
+                        <a class="nav-link transaction-nav-link" id="transaction-pills-investing-tab" data-toggle="pill" href="#pills-invest" role="tab" aria-controls="pills-invest" aria-selected="false">
+                            <span class="d-flex align-items-center"><i class="ren-people3 d-flex align-items-center"></i>LAST<br>INVESTORS</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+
+        <!-- Recent Winners Table -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab-content transaction-tab-content" id="transaction-pills-tabContent">
+                    <div class="tab-pane fade show active transaction-tab-pane" id="pills-deposits" role="tabpanel" aria-labelledby="transaction-pills-deposits-tab">
+                        <table class="table table-responsive transaction-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Game</th>
+                                <th scope="col">Sport</th>
+                                <th scope="col">Staked</th>
+                                <th scope="col">Win</th>
+                                <th scope="col">Played as</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row" class="d-flex">
+                                    <div class="user-img">
+                                        <img src="../../assets/img/table-img1.png" alt="#">
+                                    </div>
+                                    <span>Jim Adams</span>
+                                </th>
+                                <td>RMD : FCB</td>
+                                <td>Football</td>
+                                <td>N50,000</td>
+                                <td>N90,000</td>
+                                <td>Predictor</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="d-flex">
+                                    <div class="user-img">
+                                        <img src="../../assets/img/table-img2.png" alt="#">
+                                    </div>
+                                    <span>Jim Adams</span>
+                                </th>
+                                <td>ARS : TOT</td>
+                                <td>Football</td>
+                                <td>N50,000</td>
+                                <td>N90,000</td>
+                                <td>Challenger</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="d-flex">
+                                    <div class="user-img">
+                                        <img src="../../assets/img/table-img3.png" alt="#">
+                                    </div>
+                                    <span>Jim Adams</span>
+                                </th>
+                                <td>ESA : NGA</td>
+                                <td>Football</td>
+                                <td>N50,000</td>
+                                <td>N90,000</td>
+                                <td>Predictor</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="d-flex">
+                                    <div class="user-img">
+                                        <img src="../../assets/img/table-img4.png" alt="#">
+                                    </div>
+                                    <span>Jim Adams</span>
+                                </th>
+                                <td>FCB : LIV</td>
+                                <td>Football</td>
+                                <td>N50,000</td>
+                                <td>N90,000</td>
+                                <td>Challenger</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="d-flex">
+                                    <div class="user-img">
+                                        <img src="../../assets/img/table-img5.png" alt="#">
+                                    </div>
+                                    <span>Jim Adams</span>
+                                </th>
+                                <td>MANU : CHE</td>
+                                <td>Football</td>
+                                <td>N50,000</td>
+                                <td>N90,000</td>
+                                <td>Challenger</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="part-cart">
+                    <a href="#">Browse More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- transaction section end -->
+
+<!-- download section begin -->
+<!-- <section class="download-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7">
+                <div class="download-text">
+                    <h5 class="download-title">Learn, Plan, Invest in our app</h5>
+                    <h2 class="download-subtitle">Our Smart App</h2>
+                    <p class="download-title-describe">Our application is a set of tools designed to facilitate making money.</p>
+                </div>
+                <div class="app-features">
+                    <div class="single-features">
+                        <div class="icon-box-outer">
+                            <div class="icon-box">
+                                <i class="ren-calculator1"></i>
+                            </div>
+                        </div>
+                        <h3 class="single-features-text">Calculators to plan your investments</h3>
+                    </div>
+                    <div class="single-features">
+                        <div class="icon-box-outer">
+                            <div class="icon-box">
+                                <i class="ren-paperless"></i>
+                            </div>
+                        </div>
+                        <h3 class="single-features-text">100% paperless process to invest in the best funds</h3>
+                    </div>
+                    <div class="single-features">
+                        <div class="icon-box-outer">
+                            <div class="icon-box">
+                                <i class="ren-dashboard"></i>
+                            </div>
+                        </div>
+                        <h3 class="single-features-text">Dashboard to track your progress</h3>
+                    </div>
+                </div>
+                <div class="download-buttons">
+                    <div class="group-btn">
+                        <a href="#" class="btn"><i class="ren-google-play"></i>GET IT ON <br><b>GOOGLE PLAY</b></a>
+                        <a href="#" class="btn">DOWNLOAD ON THE <br><b>APP STORE</b><i class="ren-apple-store"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5">
+                <div class="right-area">
+                    <img class="ellipse-01" src="../../assets/img/download-bg-ellipse-01.png" alt="#">
+                    <img class="ellipse-02" src="../../assets/img/download-bg-ellipse-02.png" alt="#">
+                    <img class="ellipse-03" src="../../assets/img/download-bg-ellipse-03.png" alt="#">
+                    <img class="ellipse-04" src="../../assets/img/download-bg-ellipse-04.png" alt="#">
+                    <img class="smart-phone" src="../../assets/img/download-smart-phone.png" alt="#">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- download section end -->
+
+<!-- testimonial section begin -->
+<section class="testimonial-section" id="testimonials">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-8">
+                <div class="testimonial-text text-center">
+                    <h5 class="testimonial-title">Happy Clients</h5>
+                    <h2 class="testimonial-subtitle">Testimonial of Clients</h2>
+                    <p class="testimonial-title-describe">We have many happy Game players and winners. Some impresions from our Players! PLease read some of the lovely things the Players are saying about this plaform.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-6">
+
+
+                <div class="testimonial-carousel">
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <p class="client-describe">“Great service! I have been worried about investing. But when I came here. I don't have to worry anymore’’</p>
+                            <h2 class="client-name">Joy Kelley</h2>
+                            <h4 class="client-date">United kingdom, 28th April,2019</h4>
+                        </div>
+                        <div class="carousel-img">
+                            <div class="img-outline">
+                                <img src="../../assets/img/table-img2.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <p class="client-describe">“Great service! I have been worried about investing. But when I came here. I don't have to worry anymore’’</p>
+                            <h2 class="client-name">Joy Kelley</h2>
+                            <h4 class="client-date">United kingdom, 28th April,2019</h4>
+                        </div>
+                        <div class="carousel-img">
+                            <div class="img-outline">
+                                <img src="../../assets/img/table-img2.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <p class="client-describe">“Great service! I have been worried about investing. But when I came here. I don't have to worry anymore’’</p>
+                            <h2 class="client-name">Joy Kelley</h2>
+                            <h4 class="client-date">United kingdom, 28th April,2019</h4>
+                        </div>
+                        <div class="carousel-img">
+                            <div class="img-outline">
+                                <img src="../../assets/img/table-img2.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <p class="client-describe">“Great service! I have been worried about investing. But when I came here. I don't have to worry anymore’’</p>
+                            <h2 class="client-name">Joy Kelley</h2>
+                            <h4 class="client-date">United kingdom, 28th April,2019</h4>
+                        </div>
+                        <div class="carousel-img">
+                            <div class="img-outline">
+                                <img src="../../assets/img/table-img2.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <p class="client-describe">“Great service! I have been worried about investing. But when I came here. I don't have to worry anymore’’</p>
+                            <h2 class="client-name">Joy Kelley</h2>
+                            <h4 class="client-date">United kingdom, 28th April,2019</h4>
+                        </div>
+                        <div class="carousel-img">
+                            <div class="img-outline">
+                                <img src="../../assets/img/table-img2.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <p class="client-describe">“Great service! I have been worried about investing. But when I came here. I don't have to worry anymore’’</p>
+                            <h2 class="client-name">Joy Kelley</h2>
+                            <h4 class="client-date">United kingdom, 28th April,2019</h4>
+                        </div>
+                        <div class="carousel-img">
+                            <div class="img-outline">
+                                <img src="../../assets/img/table-img2.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonial section end -->
+
+<!-- questions section begin -->
+<!-- <div class="questions-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <div class="questions-text">
+                    <h5 class="questions-title">Got Any Questions</h5>
+                    <h2 class="questions-subtitle">We've Got Answers</h2>
+                 </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <ul class="nav nav-pills mb-3 justify-content-center questions-nav-pills" id="questions-pills-tab" role="tablist">
+                    <li class="nav-item questions-nav-item">
+                        <a class="nav-link questions-nav-link active" id="questions-pills-basic-tab" data-toggle="pill" href="#pills-basic" role="tab" aria-controls="questions-pills-basic-tab" aria-selected="true">Basic Question</a>
+                    </li>
+                    <li class="nav-item questions-nav-item">
+                        <a class="nav-link questions-nav-link" id="questions-pills-investing-tab" data-toggle="pill" href="#pills-investing" role="tab" aria-controls="questions-pills-investing-tab" aria-selected="false">Investing Question</a>
+                    </li>
+                    <li class="nav-item questions-nav-item">
+                        <a class="nav-link questions-nav-link" id="questions-pills-withdrawal-tab" data-toggle="pill" href="#pills-withdrawal" role="tab" aria-controls="questions-pills-withdrawal-tab" aria-selected="false">Withdrawal Question</a>
+                    </li>
+                    <li class="nav-item questions-nav-item">
+                        <a class="nav-link questions-nav-link" id="questions-pills-referral-tab" data-toggle="pill" href="#pills-referral" role="tab" aria-controls="questions-pills-referral-tab" aria-selected="false">Referral Program</a>
+                    </li>
+                </ul>
+                <div class="tab-content questions-tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active questions-tab-pane" id="pills-basic" role="tabpanel" aria-labelledby="questions-pills-basic-tab">
+                        <div class="questions-accordion" id="withdrawal-accordion">
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="withdrawal-headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link questions-btn-link" data-toggle="collapse" data-target="#withdrawal-collapseOne" aria-expanded="true" aria-controls="questions-pills-basic-tab">
+                                            What Are The Main Advantages Of Reunir?
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="withdrawal-collapseOne" class="collapse show questions-show" aria-labelledby="withdrawal-headingOne" data-parent="#withdrawal-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="withdrawal-headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#withdrawal-collapseTwo" aria-expanded="false" aria-controls="questions-pills-investing-tab">
+                                            Is It Free Of Charge To Open An Account?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="withdrawal-collapseTwo" class="collapse questions-show" aria-labelledby="withdrawal-headingTwo" data-parent="#withdrawal-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="withdrawal-headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#withdrawal-collapseThree" aria-expanded="false" aria-controls="questions-pills-withdrawal-tab">
+                                            How Secure User Accounts And Personal Data?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="withdrawal-collapseThree" class="collapse questions-show" aria-labelledby="withdrawal-headingThree" data-parent="#withdrawal-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="withdrawal-headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#withdrawal-collapseFour" aria-expanded="false" aria-controls="questions-pills-referral-tab">
+                                            How Many Accounts Can I Open On The Site?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="withdrawal-collapseFour" class="collapse questions-show" aria-labelledby="withdrawal-headingFour" data-parent="#withdrawal-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade questions-tab-pane" id="pills-investing" role="tabpanel" aria-labelledby="questions-pills-investing-tab">
+                        <div class="questions-accordion" id="investing-accordion">
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="investing-headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link questions-btn-link" data-toggle="collapse" data-target="#investing-collapseOne" aria-expanded="true" aria-controls="questions-pills-basic-tab">
+                                            What Are The Main Advantages Of Reunir?
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="investing-collapseOne" class="collapse show questions-show" aria-labelledby="investing-headingOne" data-parent="#investing-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="investing-headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#investing-collapseTwo" aria-expanded="false" aria-controls="questions-pills-investing-tab">
+                                            Is It Free Of Charge To Open An Account?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="investing-collapseTwo" class="collapse questions-show" aria-labelledby="investing-headingTwo" data-parent="#investing-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="investing-headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#investing-collapseThree" aria-expanded="false" aria-controls="questions-pills-withdrawal-tab">
+                                            How Secure User Accounts And Personal Data?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="investing-collapseThree" class="collapse questions-show" aria-labelledby="investing-headingThree" data-parent="#investing-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="investing-headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#investing-collapseFour" aria-expanded="false" aria-controls="questions-pills-referral-tab">
+                                            How Many Accounts Can I Open On The Site?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="investing-collapseFour" class="collapse questions-show" aria-labelledby="investing-headingFour" data-parent="#investing-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade questions-tab-pane" id="pills-withdrawal" role="tabpanel" aria-labelledby="questions-pills-withdrawal-tab">
+                        <div class="questions-accordion" id="basic-accordion">
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="basic-headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link questions-btn-link" data-toggle="collapse" data-target="#basic-collapseOne" aria-expanded="true" aria-controls="questions-pills-basic-tab">
+                                            What Are The Main Advantages Of Reunir?
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="basic-collapseOne" class="collapse show questions-show" aria-labelledby="basic-headingOne" data-parent="#basic-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="basic-headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#basic-collapseTwo" aria-expanded="false" aria-controls="questions-pills-investing-tab">
+                                            Is It Free Of Charge To Open An Account?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="basic-collapseTwo" class="collapse questions-show" aria-labelledby="basic-headingTwo" data-parent="#basic-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="basic-headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#basic-collapseThree" aria-expanded="false" aria-controls="questions-pills-withdrawal-tab">
+                                            How Secure User Accounts And Personal Data?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="basic-collapseThree" class="collapse questions-show" aria-labelledby="basic-headingThree" data-parent="#basic-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="basic-headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#basic-collapseFour" aria-expanded="false" aria-controls="questions-pills-referral-tab">
+                                            How Many Accounts Can I Open On The Site?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="basic-collapseFour" class="collapse questions-show" aria-labelledby="basic-headingFour" data-parent="#basic-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade questions-tab-pane" id="pills-referral" role="tabpanel" aria-labelledby="questions-pills-referral-tab">
+                        <div class="questions-accordion" id="referral-accordion">
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="referral-headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link questions-btn-link" data-toggle="collapse" data-target="#referral-collapseOne" aria-expanded="true" aria-controls="questions-pills-basic-tab">
+                                            What Are The Main Advantages Of Reunir?
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="referral-collapseOne" class="collapse show questions-show" aria-labelledby="referral-headingOne" data-parent="#referral-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="referral-headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#referral-collapseTwo" aria-expanded="false" aria-controls="questions-pills-investing-tab">
+                                            Is It Free Of Charge To Open An Account?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="referral-collapseTwo" class="collapse questions-show" aria-labelledby="referral-headingTwo" data-parent="#referral-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="referral-headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#referral-collapseThree" aria-expanded="false" aria-controls="questions-pills-withdrawal-tab">
+                                            How Secure User Accounts And Personal Data?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="referral-collapseThree" class="collapse questions-show" aria-labelledby="referral-headingThree" data-parent="#referral-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card questions-card">
+                                <div class="card-header questions-card-header" id="referral-headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed questions-btn-link" data-toggle="collapse" data-target="#referral-collapseFour" aria-expanded="false" aria-controls="questions-pills-referral-tab">
+                                            How Many Accounts Can I Open On The Site?
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="referral-collapseFour" class="collapse questions-show" aria-labelledby="referral-headingFour" data-parent="#referral-accordion">
+                                    <div class="card-body questions-card-body">
+                                        All stored data on our servers remains protected via encryption technology all the time. All account related transactions done by our clients are mediated exclusively via secured internet connections.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- questions section end -->
+
+<!-- contact-us section begin -->
+<section class="contact-us-section" id="contact-us-section">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="contact-us-text">
+                    <h5 class="contact-us-title">Contact Us</h5>
+                    <h2 class="contact-us-subtitle">Get in Touch</h2>
+                    <p class="contact-us-title-describe">Please feel free to contact us through our support center. Simply choose the appropriate support options to send us your questions, concerns and/or feedback.Our customer service team is ready to overcome any issues that might occur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-img">
+                    <img src="../../assets/img/contact-us.jpg" alt="#">
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-form">
+                    <form id="contactForm" method="post" class="contact-form-aqua">
+                        <h2 class="contact-head">Send Us a Massage</h2>
+                        <input type="text" name="name" required="" placeholder="Name *" class="contact-frm active">
+                        <input type="email" name="email" required="" placeholder="Email *" class="contact-frm">
+                        <textarea name="message" id="message" placeholder="Message *" class="contact-msg"></textarea>
+                        <input id="form-submit" type="submit" value="SUBMIT NOW" class="contact-btn">
+                        <br>
+                        <br>
+                        <span class="msgSubmit"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- contact-us section end -->
+
+<!-- signup section begin -->
+<!-- <section class="signup-section">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8">
+                    <div class="signup-text">
+                        <h5 class="signup-title">CREATE YOUR ACCOUNT</h5>
+                        <h2 class="signup-subtitle">Start Playing and Start Winning</h2>
+                        <p class="signup-title-describe">Get Started Now,Create your personal account as a first step to turn your passion into Income.Are you ready to start winning with this platform?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-4 d-flex justify-content-end align-items-center reunir-content-center">
+                    <div class="signup-right-text">
+                        <a href="#">Signup Now<i class="ren-arrowright"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- signup section end -->
+
+
+
+<!-- footer section begin -->
+<footer class="footer-section">
+    <div class="overlay">
+
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop">
+                <div class="wave waveTop"></div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <div class="wave waveMiddle"></div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom"></div>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <div class="social-icon">
+                            <ul class="icon-area">
+                                <li class="social-nav">
+                                    <a href="#"><i class="icofont-facebook"></i></a>
+                                </li>
+                                <li class="social-nav">
+                                    <a href="#"><i class="icofont-twitter"></i></a>
+                                </li>
+                                <li class="social-nav">
+                                    <a href="#"><i class="icofont-whatsapp"></i></a>
+                                </li>
+                                <li class="social-nav">
+                                    <a href="#"><i class="icofont-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-text">
+                            <h5 class="footer-title">Subscribe to 1-on-1 Betting</h5>
+                            <h2 class="footer-subtitle">To Get Latest Games Posted</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="subscribe">
+                            <input type="email" name="email" placeholder="Your Email Address" class="input-subscribe">
+                            <button class="subscribe-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 col-md-12 d-flex justify-content-start reunir-content-center">
+                            <div class="footer-bottom-left">
+                                <p>Copyright © 2019.All Rights Reserved By <a href="#">DeCloud23 Technologies</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 d-flex justify-content-end reunir-content-center">
+                            <div class="footer-bottom-right">
+                                <ul>
+                                    <li>
+                                        <a href="#">Privacy & Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Term Of Service</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Designers</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer section end -->
