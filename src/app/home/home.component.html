@@ -41,9 +41,14 @@
                                 </div>
                             </li> -->
                             
-                            <!-- NB: This will only show if the User is Logged-In already -->
-                            <li class="header-right-list" [routerLink]="['/dashboard']">
+                           
+                            <li *ngIf="!loggedIn()" class="header-right-list" [routerLink]="['/login']">
                                 <p class="header-right-text"><span class="header-right-icon carticon"><i class="ren-people1"></i></span>My Dashboard</p>
+                            </li>
+                           
+                            
+                            <li *ngIf="loggedIn()" class="header-right-list" [routerLink]="['/dashboard']">
+                                <p class="header-right-text"><span class="header-right-icon carticon"><i class="ren-people1"></i></span>{{username.unique_name | titlecase }}</p>
                             </li>
                         </ul>
                     </div>
@@ -88,7 +93,8 @@
                 </ul>
             </div>
             <div class="right-side-box">
-                <a class="join-btn" [routerLink]="['/register']">JOIN NOW</a>
+                <a *ngIf="!loggedIn()" class="join-btn" [routerLink]="['/register']">JOIN NOW</a>
+                <a *ngIf="loggedIn()" class="join-btn" [routerLink]="['/dashboard']">DASHBOARD</a>
             </div>
         </div>
     </nav>
@@ -119,7 +125,8 @@
                     <div class="col-lg-12 text-center text-muted text-white">
                         <p><strong>Remember Only One Winner</strong></p>
                         <div class="get-start">
-                            <a [routerLink]="['/login']">GET STARTED</a>
+                            <a *ngIf="!loggedIn()" [routerLink]="['/login']">GET STARTED</a>
+                            <a *ngIf="loggedIn()" [routerLink]="['/dashboard']">START PLAYING</a>
                         </div>
                     </div>
                 </div>

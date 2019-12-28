@@ -1,3 +1,4 @@
+import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { DashboardPlayComponent } from './dashboard-play/dashboard-play.component';
 import { DashboardMyGamesComponent } from './dashboard-my-games/dashboard-my-games.component';
 import { DashboardMyAccountComponent } from './dashboard-my-account/dashboard-my-account.component';
@@ -11,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardChallengeComponent } from './dashboard-challenge/dashboard-challenge.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -18,11 +20,22 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegistrationFormComponent },
-  {path: 'dashboard', component: DashboardHomeComponent },
-  {path: 'dashboard/account', component: DashboardMyAccountComponent },
-  {path: 'dashboard/challenge', component: DashboardChallengeComponent },
-  {path: 'dashboard/game', component: DashboardMyGamesComponent },
-  {path: 'dashboard/play', component: DashboardPlayComponent },
+  {path: 'validate/email', component: EmailValidationComponent },
+
+  // Using just one Auth Guard to protect multiple Routes
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    children: [
+      {path: 'dashboard', component: DashboardHomeComponent },
+      {path: 'dashboard/account', component: DashboardMyAccountComponent },
+      {path: 'dashboard/challenge', component: DashboardChallengeComponent },
+      {path: 'dashboard/game', component: DashboardMyGamesComponent },
+      {path: 'dashboard/play', component: DashboardPlayComponent },
+    ]
+  },
+  
   {path: '**', redirectTo: '', pathMatch: 'full' } 
 ];
 

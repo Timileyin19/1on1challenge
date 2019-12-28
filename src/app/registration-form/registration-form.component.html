@@ -34,54 +34,126 @@
       <div class="col-md-6 mx-auto my-auto">
           <div class="card dashboard-bg">
               <!-- <div class="card-body"> -->
-                  <form>
-                      <div class="form-group">
+                  <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    
+                    <!-- Full Name Field -->
+                    <div class="form-group">
                           <label for="fullName" class="mb-0">Full Name</label>
-                          <input type="text" class="form-control">
+                          <input type="text" 
+                            [ngClass]="{'is-invalid': registerForm.get('fullName').errors && registerForm.get('fullName').touched}"
+                            class="form-control" formControlName="fullName">
+                            <div class="invalid-feedback" *ngIf="registerForm.get('fullName').touched && registerForm.get('fullName').hasError('required')">Please enter your full Name</div>
                       </div>
+
                       <div class="row">
+                          <!-- Email Field -->
                           <div class="col-md-7">
                               <div class="form-group">
                                   <label for="email" class="mb-0">Email</label>
-                                  <input type="email" class="form-control">
+                                  <input type="email" 
+                                    [ngClass]="{'is-invalid': registerForm.get('email').errors && registerForm.get('email').touched }"  
+                                  class="form-control" formControlName="email">
+                                  <div class="invalid-feedback" *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('required')">Email is required</div>
+                                  <div class="invalid-feedback" *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('email')">Enter a valid Email</div>
                               </div>
                           </div>
+
+                          <!-- Gender Field -->
                           <div class="col-md-5">
                               <div class="form-group">
                                   <label for="gender" class="mb-0">Gender</label>
-                                  <select class="form-control">
-                                      <option></option>
+                                  <select class="form-control"
+                                  [ngClass]="{'is-invalid': registerForm.get('gender').errors && registerForm.get('gender').touched }" 
+                                    formControlName="gender">
+                                      <option value="" disabled></option>
                                       <option value="male">Male</option>
                                       <option value="female">Female</option>
                                   </select>
+                                  <div class="invalid-feedback" *ngIf="registerForm.get('gender').touched && registerForm.get('gender').hasError('required')">Please select your Gender</div>
                               </div>
                           </div>
                       </div>
+
                       <div class="row">
+
+                          <!-- Username Field -->
                           <div class="col-md-6">
                               <div class="form-group">
-                                  <label for="email" class="mb-0">Username</label>
-                                  <input type="text" class="form-control">
+                                  <label for="username" class="mb-0">Username</label>
+                                  <input type="text"
+                                    [ngClass]="{'is-invalid': registerForm.get('username').errors && registerForm.get('username').touched }"  
+                                    class="form-control"  
+                                    formControlName="username">
+                                    <div class="invalid-feedback" *ngIf="registerForm.get('username').touched && registerForm.get('username').hasError('required')">Please choose a Username</div>
                               </div>
                           </div>
                           <div class="col-md-6">
                               <div class="form-group">
-                                  <label for="mobileNumber" class="mb-0">Mobile Number</label>
-                                  <input type="text" class="form-control">
+                                  <label for="phoneNumber" class="mb-0">Mobile Number</label>
+                                  <input type="text" class="form-control"
+                                  [ngClass]="{'is-invalid': registerForm.get('phoneNumber').errors && registerForm.get('phoneNumber').touched }"  
+                                  formControlName="phoneNumber">
+                                  <div class="invalid-feedback" *ngIf="registerForm.get('phoneNumber').touched && registerForm.get('phoneNumber').hasError('required')">Please enter your Mobile Number</div>
                               </div>
                           </div>
                       </div>
+
                       <div class="row">
+                        <!-- DOB Field -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="dateOfBirth" class="mb-0">Date of Birth</label>
+                                <input type="date" 
+                                  [ngClass]="{'is-invalid': registerForm.get('dateOfBirth').errors && registerForm.get('dateOfBirth').touched }"  
+                                class="form-control" formControlName="dateOfBirth">
+                                <div class="invalid-feedback" *ngIf="registerForm.get('dateOfBirth').touched && registerForm.get('dateOfBirth').hasError('required')">Date of Birth is required</div>
+                            </div>
+                        </div>
+
+                        <!-- City Field -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city" class="mb-0">City</label>
+                                <input [ngClass]="{'is-invalid': registerForm.get('city').errors && registerForm.get('city').touched}" class="form-control"
+                                  formControlName="city" type="text">
+                                <div class="invalid-feedback" *ngIf="registerForm.get('city').touched && registerForm.get('city').hasError('required')">City is required</div>
+                            </div>
+                        </div>
+
+                        <!-- Country Field -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="country" class="mb-0">Country</label>
+                                <input [ngClass]="{'is-invalid': registerForm.get('country').errors && registerForm.get('country').touched}" class="form-control" formControlName="country" type="text">
+                                <div class="invalid-feedback" *ngIf="registerForm.get('country').touched && registerForm.get('country').hasError('required')">Country is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="row">
+                          <!-- Password Field -->
                           <div class="col-md-6">
                               <div class="form-group">
                                   <label for="password" class="mb-0">Password</label>
-                                  <input type="password" class="form-control">
+                                  <input type="password" 
+                                    [ngClass]="{'is-invalid': registerForm.get('password').errors && registerForm.get('password').touched}"
+                                  class="form-control" formControlName="password">
+                                        <div class="invalid-feedback"
+                                        *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched"
+                                        >Password is required</div>
+                                        <div class="invalid-feedback"
+                                        *ngIf="registerForm.get('password').hasError('minlength') && registerForm.get('password').touched"
+                                        >Password must be at least 8 characters</div>
                               </div>
                           </div>
+
+                          <!-- Confirm Password Field -->
                           <div class="col-md-6">
                               <div class="form-group">
                                   <label for="password" class="mb-0">Confirm Password</label>
-                                  <input type="password" class="form-control">
+                                  <input type="password"
+                                  [ngClass]="{'is-invalid': registerForm.get('confirmPassword').errors && registerForm.get('confirmPassword').touched ||   registerForm.get('confirmPassword').touched && registerForm.hasError('mismatch')}" class="form-control" formControlName="confirmPassword">
+                                  <div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched">Enter your choosen password again</div><div class="invalid-feedback" *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword').touched"> Passwords must match</div>
                               </div>
                           </div>
                       </div>
@@ -90,7 +162,7 @@
                   <p>Already have an Account? <span class="ml-2"><a [routerLink]="['/login']">Sign In</a></span></p>
               <!-- </div> -->
               <div class="card-footer">
-                  <button class="btn-primary btn-block" [routerLink]="['/dashboard']">Register</button>
+                  <button class="btn-primary btn-block" [disabled]="!registerForm.valid">Register</button>
               </div>
           </form>
           </div>

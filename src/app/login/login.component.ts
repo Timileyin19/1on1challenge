@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { AlertifyService } from './../_services/alertify.service';
+import { AuthService } from './../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,15 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginFormDetails: any = {};
+  model: any = {};
 
-  constructor() { }
+  constructor(private authService: AuthService, private alertify: AlertifyService, private router: Router) { }
 
   ngOnInit() {
   }
 
   login() {
-    console.log(this.loginFormDetails);
+    var userTologin = JSON.stringify(this.model);
+    this.authService.login(userTologin)
+      .subscribe(next => {
+        this.alertify.success('Logged in Successfully');
+      }, error => {
+        this.alertify.error(error);
+      }, () => {
+        this.router.navigate(['/dashboard']);
+      })
   }
-
 }

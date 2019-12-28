@@ -1,6 +1,12 @@
+import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtModule } from '@auth0/angular-jwt';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +19,16 @@ import { DashboardMyAccountComponent } from './dashboard-my-account/dashboard-my
 import { DashboardChallengeComponent } from './dashboard-challenge/dashboard-challenge.component';
 import { DashboardMyGamesComponent } from './dashboard-my-games/dashboard-my-games.component';
 import { DashboardPlayComponent } from './dashboard-play/dashboard-play.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { EmailValidationComponent } from './email-validation/email-validation.component';
+import { AlertifyService } from './_services/alertify.service';
+import { AuthGuard } from './_guards/auth.guard';
+
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
+
 
 @NgModule({
   declarations: [
@@ -25,14 +41,31 @@ import { DashboardPlayComponent } from './dashboard-play/dashboard-play.componen
     DashboardMyAccountComponent,
     DashboardChallengeComponent,
     DashboardMyGamesComponent,
-    DashboardPlayComponent
+    DashboardPlayComponent,
+    EmailValidationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['http://1on1stakeapi.23esm.com'],
+        blacklistedRoutes: ['http://1on1stakeapi.23esm.com/api/Auth']
+      }
+    })
   ],
-  providers: [],
+  providers: [
+    ErrorInterceptorProvider,
+    AlertifyService, 
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
