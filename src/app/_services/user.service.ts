@@ -14,4 +14,16 @@ export class UserService {
   getAllUsers() {
     return this.http.get(this.baseUrl + 'getallusers');
   }
+
+  getUser(id: number) {
+    return this.http.get(this.baseUrl + id);
+  }
+
+  updateUser(userToUpdate) {
+    return this.http.put(this.baseUrl + 'update/' + userToUpdate.id, userToUpdate);
+  }
+
+  deleteUser(userId) {
+    return this.http.delete(this.baseUrl + 'delete/' + userId);
+  }
 }

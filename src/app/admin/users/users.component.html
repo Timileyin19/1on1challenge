@@ -6,12 +6,13 @@
   <div class="container">
     <div class="d-table-row">
       <div class="col-md-12">
-        <div class="dashboard-bg p-3">
-          <table class="myTable table table-responsive text-white">
+        <h5 class="text-white text-center"> All Users  </h5>
+        <div class="table-responsive dashboard-bg p-3">
+          <table class="myTable table text-white">
               <thead>
                   <tr>
                       <th>User Id</th>
-                      <th>Picture</th>
+                      <!-- <th>Picture</th> -->
                       <th>Full Name</th>
                       <th>Username</th>
                       <th>Gender</th>
@@ -20,25 +21,31 @@
                       <th>Age</th>
                       <th>Last Active</th>
                       <th>Edit</th>
+                      <th>View</th>
                       <th>Delete</th>
                   </tr>
               </thead>
               <tbody>
                   <tr *ngFor="let user of users">
                       <td>{{ user.id }}</td>
-                      <td>{{ user.profilePicLink }}</td>
+                      <!-- <td *ngIf="user.profilePicLink">
+                        <div [style.backgroundImage]="'url(' + user.profilePicLink + ')'" class="thumbnail" alt="user.username"></div>
+                      </td> -->
                       <td> {{ user.fullName }} </td>
                       <td> {{ user.username }} </td>
                       <td> {{ user.gender }}</td>
                       <td> {{ user.city }} </td>
                       <td> {{ user.country }} </td>
-                      <td> {{ user.country }} </td>
                       <td> {{ user.age }} </td>
-                      <td> {{ user.lastActive }} </td>
-                      <td> Edit Btn </td>
-                      <td> Delete Btn </td>
+                      <td> {{ user.lastActive | date }} </td>
                       <td>
-                          <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#deleteGameModal"><i class="icofont-trash text-white"></i></button>
+                          <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="getUser(user.id)"><i class="icofont-edit text-white"></i></button>
+                      </td>
+                      <td>
+                        <button class="btn btn-myInfo btn-sm" (click)="userDetail(user.id)">More Detail</button>
+                      </td>
+                      <td>
+                          <button class="btn myBtn btn-sm" (click)="deleteUser(user.id)"><i class="icofont-trash text-white"></i></button>
                       </td>
                   </tr>
               </tbody>
@@ -56,5 +63,95 @@
       </div>
     </div>
   </div>
+</div>
 
+ <!-- Edit User Modal -->
+ <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-5 mx-auto">
+            <img *ngIf="!myUser" src="../../../assets/img/load.gif" alt="loading...">
+          </div>
+        </div>
+
+
+        <form *ngIf="myUser" #updateUserForm="ngForm" (ngSubmit)="updateUserDetails()">
+          <div class="row">
+             <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="fullName" class="text-muted mb-0">Full Name</label>
+                      <input type="text" class="form-control" placeholder="Full Name" name="fullName" [(ngModel)]="myUser.fullName">
+                  </div>
+             </div>
+             <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="email" class="text-muted mb-0">Email</label>
+                      <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="myUser.email">
+                  </div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="phoneNumber" class="text-muted mb-0">Phone Number</label>
+                      <input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber" [(ngModel)]="myUser.phoneNumber">
+                  </div>
+             </div>
+             <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="balance" class="text-muted mb-0">Balance</label>
+                      <input type="number" class="form-control" placeholder="Wallet Balance" name="balance" [(ngModel)]="myUser.balance">
+                  </div>
+             </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="city" class="text-muted mb-0">City</label>
+                      <input type="text" class="form-control"  placeholder="City" name="city" [(ngModel)]="myUser.city">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="country" class="text-muted mb-0">Country</label>
+                      <input type="text" class="form-control"  placeholder="Country" name="country" [(ngModel)]="myUser.country">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="walletAddress" class="text-muted mb-0">Wallet Address</label>
+                      <input type="text" class="form-control"  placeholder="Wallet Address" name="walletAddress" [(ngModel)]="myUser.walletAddress">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="profilePicLink" class="text-muted mb-0">Profile Picture Link</label>
+                      <input type="text" class="form-control"  placeholder="Profile Picture Link" name="profilePicLink" [(ngModel)]="myUser.profilePicLink">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!updateUserForm.valid"  type="submit" class="btn btn-myInfo btn-block">Update {{ myUser.username }}'s Details</button>
+            </div>
+          </div>
+      </form>
+                    
+      </div>
+      
+    </div>
+  </div>
 </div>

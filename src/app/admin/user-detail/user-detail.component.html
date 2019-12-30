@@ -1,0 +1,27 @@
+
+<app-navbar></app-navbar>
+
+<div class="card card-body mb-3 mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <img class="img-fluid mb-2" src="{{ user.profilePicLink || '../../../../../assets/img/user.png' }}">
+      <button class="btn btn-primary btn-block mb-4" type="button">{{ user.fullName }}</button>
+    </div>
+    <div class="col-md-9">
+      <span class="badge badge-primary mr-1">Gender: {{ user.gender }}</span>
+      <span class="badge badge-secondary mr-1">Age: {{ user.age }}</span>
+      <span class="badge badge-success mr-1">Activated?: {{ user.isActivated }}</span>
+      <span class="badge badge-info mr-1">Balance: {{ user.balance }}</span>
+      <br><br>
+      <ul class="list-group">
+        <li class="list-group-item">Wallet Address: <strong>{{ user.walletAddress }}</strong></li>
+        <li class="list-group-item">Phone Number: <strong>{{ user.phoneNumber }}</strong> </li>
+        <li class="list-group-item">Email: <strong>{{ user.email }}</strong></li>
+        <li class="list-group-item">Member Since: <strong>{{ user.creationDate | date }}</strong></li>
+        <li class="list-group-item">City: <strong>{{ user.city }}</strong> </li>
+        <li class="list-group-item">Country: <strong>{{ user.country }}</strong> </li>
+        <li class="list-group-item">Activation Code: <strong>{{ user.activationCode }}</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -31,6 +31,8 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminAuthGuard } from './_guards/admin-auth.guard';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserDetailComponent } from './admin/user-detail/user-detail.component';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 
 
 export function tokenGetter() {
@@ -55,7 +57,8 @@ export function tokenGetter() {
     GamesComponent,
     AdminLoginComponent,
     AdminDashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ export function tokenGetter() {
     AuthGuard,
     AdminAuthGuard,
     UserService,
-    AllUsersResolver
+    AllUsersResolver,
+    UserDetailResolver
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { AllUsersResolver } from './_resolvers/all-users.resolver';
 import { UsersComponent } from './admin/users/users.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardChallengeComponent } from './dashboard-challenge/dashboard-challenge.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { AdminAuthGuard } from './_guards/admin-auth.guard';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -49,7 +51,8 @@ const routes: Routes = [
     canActivate: [AdminAuthGuard],
     children: [
       { path: 'admin/dashboard', component: AdminDashboardComponent },
-      { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} }
+      { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} },
+      { path: 'admin/user/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver} }
     ]
   },
   
