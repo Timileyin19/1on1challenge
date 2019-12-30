@@ -1,3 +1,5 @@
+import { AllUsersResolver } from './_resolvers/all-users.resolver';
+import { UserService } from './_services/user.service';
 import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,6 +25,12 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthGuard } from './_guards/auth.guard';
+import { UsersComponent } from './admin/users/users.component';
+import { GamesComponent } from './admin/games/games.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminAuthGuard } from './_guards/admin-auth.guard';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 export function tokenGetter() {
@@ -42,7 +50,12 @@ export function tokenGetter() {
     DashboardChallengeComponent,
     DashboardMyGamesComponent,
     DashboardPlayComponent,
-    EmailValidationComponent
+    EmailValidationComponent,
+    UsersComponent,
+    GamesComponent,
+    AdminLoginComponent,
+    AdminDashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +77,10 @@ export function tokenGetter() {
     ErrorInterceptorProvider,
     AlertifyService, 
     AuthService,
-    AuthGuard
+    AuthGuard,
+    AdminAuthGuard,
+    UserService,
+    AllUsersResolver
   ],
   bootstrap: [AppComponent]
 })

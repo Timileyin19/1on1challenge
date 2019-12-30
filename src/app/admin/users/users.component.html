@@ -1,0 +1,60 @@
+<div class="dashboardBody">
+
+  <!-- Top Navigation Bar -->
+  <app-navbar></app-navbar>
+
+  <div class="container">
+    <div class="d-table-row">
+      <div class="col-md-12">
+        <div class="dashboard-bg p-3">
+          <table class="myTable table table-responsive text-white">
+              <thead>
+                  <tr>
+                      <th>User Id</th>
+                      <th>Picture</th>
+                      <th>Full Name</th>
+                      <th>Username</th>
+                      <th>Gender</th>
+                      <th>City</th>
+                      <th>Country</th>
+                      <th>Age</th>
+                      <th>Last Active</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let user of users">
+                      <td>{{ user.id }}</td>
+                      <td>{{ user.profilePicLink }}</td>
+                      <td> {{ user.fullName }} </td>
+                      <td> {{ user.username }} </td>
+                      <td> {{ user.gender }}</td>
+                      <td> {{ user.city }} </td>
+                      <td> {{ user.country }} </td>
+                      <td> {{ user.country }} </td>
+                      <td> {{ user.age }} </td>
+                      <td> {{ user.lastActive }} </td>
+                      <td> Edit Btn </td>
+                      <td> Delete Btn </td>
+                      <td>
+                          <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#deleteGameModal"><i class="icofont-trash text-white"></i></button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <!-- Pagination -->
+          <ul class="myPagination pagination">
+              <li class="page-item"><a class="page-link text-white" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link text-white" href="#">1</a></li>
+              <li class="page-item"><a class="page-link text-white" href="#">2</a></li>
+              <li class="page-item"><a class="page-link text-white" href="#">3</a></li>
+              <li class="page-item"><a class="page-link text-white" href="#">Next</a></li>
+          </ul>
+     
+      </div>
+      </div>
+    </div>
+  </div>
+
+</div>

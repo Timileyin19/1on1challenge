@@ -1,3 +1,7 @@
+import { AllUsersResolver } from './_resolvers/all-users.resolver';
+import { UsersComponent } from './admin/users/users.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { EmailValidationComponent } from './email-validation/email-validation.component';
 import { DashboardPlayComponent } from './dashboard-play/dashboard-play.component';
 import { DashboardMyGamesComponent } from './dashboard-my-games/dashboard-my-games.component';
@@ -13,6 +17,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { LoginComponent } from './login/login.component';
 import { DashboardChallengeComponent } from './dashboard-challenge/dashboard-challenge.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { AdminAuthGuard } from './_guards/admin-auth.guard';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -33,6 +38,18 @@ const routes: Routes = [
       {path: 'dashboard/challenge', component: DashboardChallengeComponent },
       {path: 'dashboard/game', component: DashboardMyGamesComponent },
       {path: 'dashboard/play', component: DashboardPlayComponent },
+    ]
+  },
+
+  // Admin Route
+  { path: '1on1-admin', component: AdminLoginComponent},
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AdminAuthGuard],
+    children: [
+      { path: 'admin/dashboard', component: AdminDashboardComponent },
+      { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} }
     ]
   },
   

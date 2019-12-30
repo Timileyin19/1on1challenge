@@ -48,4 +48,9 @@ export class AuthService {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);
   }
+
+  adminLoggedIn() {
+    const admin = JSON.parse(localStorage.getItem('admin'));
+    return admin == true ? true : false;
+  }
 }
