@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://1on1stakeapi.23esm.com/api/'
+  apiUrl: 'https://1on1stake.com/api/'
 };
 
 /*
