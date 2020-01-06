@@ -17,7 +17,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
   adminLogin() {
-    if (this.model.username == 'timileyin19' && this.model.password == 'abiodun123') {
+    if (this.model.username == 'admin1on1' && this.model.password == 'myAdmin.Pass') {
       this.alertify.success('You are logged in as an Admin');
       localStorage.setItem('admin', JSON.stringify(true));
       this.router.navigate(['/admin/dashboard']);
