@@ -1,3 +1,5 @@
+import { AllSportsResolver } from './_resolvers/all-sports.resolver';
+import { GamesService } from './_services/games.service';
 import { AllUsersResolver } from './_resolvers/all-users.resolver';
 import { UserService } from './_services/user.service';
 import { AuthService } from './_services/auth.service';
@@ -80,9 +82,11 @@ export function tokenGetter() {
     ErrorInterceptorProvider,
     AlertifyService, 
     AuthService,
+    GamesService,
     AuthGuard,
     AdminAuthGuard,
     UserService,
+    AllSportsResolver,
     AllUsersResolver,
     UserDetailResolver
   ],

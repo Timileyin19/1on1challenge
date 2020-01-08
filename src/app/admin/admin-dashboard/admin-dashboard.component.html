@@ -2,6 +2,274 @@
 
   <!-- Top Navigation Bar -->
   <app-navbar></app-navbar>
+
+  <div class="container">
+    <div class="row pt-3">
+      <!-- Sport -->
+      <div class="col-md-4 text-white myCard">
+        <h3>Sports</h3>
+        <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addSportModal">Add New Sport</button>
+        <table class="myTable table table-border-bottom text-white mt-1">
+          <thead>
+              <tr>
+                  <th>Sport</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Football</td>
+                  <td>
+                    <!-- Edit Sport Name -->
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editSportModal" (click)="getSport()"><i class="icofont-edit text-white"></i></button>
+                  </td>
+                  <td>
+                    <!-- Delete Sport -->
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteSport()"><i class="icofont-trash text-white"></i></button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+
+      <!-- League -->
+      <div class="col-md-4 text-white myCard">
+        <h3>Leagues</h3>
+        <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addLeagueModal">Add New League</button>
+        <table class="myTable table table-border-bottom text-white mt-1">
+          <thead>
+              <tr>
+                  <th>League</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>EPL</td>
+                  <td>
+                    <!-- Edit Sport Name -->
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editLeagueModal" (click)="getLeague()"><i class="icofont-edit text-white"></i></button>
+                  </td>
+                  <td>
+                    <!-- Delete Sport -->
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteLeague()"><i class="icofont-trash text-white"></i></button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+
+      <!-- Condition -->
+      <div class="col-md-4 text-white myCard">
+        <h3>Conditions</h3>
+        <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addConditionModal">Add New Condition</button>
+        <table class="myTable table table-border-bottom text-white mt-1">
+          <thead>
+              <tr>
+                  <th>Condition</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>TeamA Lose - Team B Wins</td>
+                  <td>
+                    <!-- Edit Sport Name -->
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editConditionModal" (click)="getCondition()"><i class="icofont-edit text-white"></i></button>
+                  </td>
+                  <td>
+                    <!-- Delete Sport -->
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteCondition()"><i class="icofont-trash text-white"></i></button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+  </div>
   
 
+</div>
+
+<!--Add Sport Modal -->
+<div class="modal fade" id="addSportModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Sport</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addSportForm="ngForm" (ngSubmit)="addSport()">
+          <div class="form-group">
+              <label for="gameCondition">Sport Name</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!addSportForm.valid"  type="submit" class="btn btn-myInfo btn-block">Add Sport</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Add League Modal -->
+<div class="modal fade" id="addLeagueModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New League</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addLeagueForm="ngForm" (ngSubmit)="addLeague()">
+          <div class="form-group">
+              <label for="gameCondition">League Name</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!addLeagueForm.valid"  type="submit" class="btn btn-myInfo btn-block">Add League</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Add Condition Modal -->
+<div class="modal fade" id="addConditionModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Conditon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addConditionForm="ngForm" (ngSubmit)="addCondition()">
+          <div class="form-group">
+              <label for="gameCondition">Condition Name</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!addConditionForm.valid"  type="submit" class="btn btn-myInfo btn-block">Add Condition</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Edit Sport Modal -->
+<div class="modal fade" id="editSportModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Sport Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editSportForm="ngForm" (ngSubmit)="updateSport()">
+          <div class="form-group">
+              <label for="gameCondition">Sport Name</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button type="submit" class="btn btn-myInfo btn-block">Save Changes</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Edit League Modal -->
+<div class="modal fade" id="editLeagueModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit League Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editLeagueForm="ngForm" (ngSubmit)="updateLeague()">
+          <div class="form-group">
+              <label for="gameCondition">League Name</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button type="submit" class="btn btn-myInfo btn-block">Save Changes</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Edit Condition Modal -->
+<div class="modal fade" id="editConditionModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Condition</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editConditionForm="ngForm" (ngSubmit)="updateCondition()">
+          <div class="form-group">
+              <label for="gameCondition">Condition</label>
+              <input type="text" class="form-control" required>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button type="submit" class="btn btn-myInfo btn-block">Save Changes</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
 </div>

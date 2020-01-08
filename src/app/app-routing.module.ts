@@ -52,7 +52,7 @@ const routes: Routes = [
     children: [
       { path: 'admin/dashboard', component: AdminDashboardComponent },
       { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} },
-      { path: 'admin/user/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver} }
+      { path: 'admin/user/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver } }
     ]
   },
   

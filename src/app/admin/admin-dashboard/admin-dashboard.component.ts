@@ -12,4 +12,28 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSport() {
+    console.log('Get Sport need ID');
+  }
+
+  deleteSport() {
+    console.log('Delete Sport need ID');
+  }
+
+  getLeague() {
+    console.log('Get League need ID');
+  }
+
+  deleteLeague() {
+    console.log('Delete League need ID');
+  }
+
+  getCondition() {
+    console.log('Get Condition need ID');
+  }
+
+  deleteCondition() {
+    console.log('Delete Condition need ID');
+  }
+
 }
