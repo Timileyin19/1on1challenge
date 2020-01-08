@@ -56,4 +56,8 @@ export class AdminDashboardComponent implements OnInit {
     console.log('Update League');
   }
 
+  addSport() {
+    console.log('Add Sport');
+  }
+
 }
