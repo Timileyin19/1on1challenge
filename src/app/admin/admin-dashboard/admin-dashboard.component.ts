@@ -36,4 +36,24 @@ export class AdminDashboardComponent implements OnInit {
     console.log('Delete Condition need ID');
   }
 
+  addLeague() {
+    console.log('Add League');
+  }
+
+  addCondition() {
+    console.log('Add Condition');
+  }
+
+  updateSport() {
+    console.log('Update Sport');
+  }
+
+  updateCondition() {
+    console.log('Update Condition');
+  }
+
+  updateLeague() {
+    console.log('Update League');
+  }
+
 }
