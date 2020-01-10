@@ -17,19 +17,25 @@
                   <th>Delete</th>
               </tr>
           </thead>
-          <tbody>
-              <tr>
-                  <td>Football</td>
+          <tbody *ngIf="!sports">
+            <tr>
+              <img class="spinner" src="../../../assets/img/load.gif" alt="Loading...">
+            </tr>
+          </tbody>
+          <tbody *ngIf="sports">
+              <tr *ngFor="let sport of sports">
+                  <td>{{ sport.name }}</td>
                   <td>
                     <!-- Edit Sport Name -->
-                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editSportModal" (click)="getSport()"><i class="icofont-edit text-white"></i></button>
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editSportModal" (click)="getSport(sport.id)"><i class="icofont-edit text-white"></i></button>
                   </td>
                   <td>
                     <!-- Delete Sport -->
-                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteSport()"><i class="icofont-trash text-white"></i></button>
+                    <button class="btn myBtn btn-sm" (click)="deleteSport(sport.id)"><i class="icofont-trash text-white"></i></button>
                   </td>
               </tr>
           </tbody>
+          
       </table>
     </div>
 
@@ -40,21 +46,31 @@
         <table class="myTable table table-border-bottom text-white mt-1">
           <thead>
               <tr>
-                  <th>League</th>
+                  <th>Name</th>
+                  <th>Location</th>
+                  <th>Sport</th>
                   <th>Edit</th>
                   <th>Delete</th>
               </tr>
           </thead>
-          <tbody>
-              <tr>
-                  <td>EPL</td>
+          <tbody *ngIf="!leagues">
+            <tr>
+              <img class="spinner" src="../../../assets/img/load.gif" alt="Loading...">
+            </tr>
+          </tbody>
+          <tbody *ngIf="leagues">
+              <tr *ngFor="let league of leagues">
+                  <td> {{ league.name }} </td>
+                  <td> {{ league.location }} </td>
+                  <!-- <td *ngIf="league.sport != null"> {{ league.sport.name }} </td> -->
+                  <td> {{ getSportById(league.sportId).name }} </td>
                   <td>
                     <!-- Edit Sport Name -->
-                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editLeagueModal" (click)="getLeague()"><i class="icofont-edit text-white"></i></button>
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editLeagueModal" (click)="getLeague(league.id)"><i class="icofont-edit text-white"></i></button>
                   </td>
                   <td>
                     <!-- Delete Sport -->
-                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteLeague()"><i class="icofont-trash text-white"></i></button>
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteLeague(league.id)"><i class="icofont-trash text-white"></i></button>
                   </td>
               </tr>
           </tbody>
@@ -107,7 +123,7 @@
         <form #addSportForm="ngForm" (ngSubmit)="addSport()">
           <div class="form-group">
               <label for="gameCondition">Sport Name</label>
-              <input type="text" class="form-control" required>
+              <input type="text" name="editSport" [(ngModel)]="newSport.name" class="form-control" required>
           </div>
           <div class="row">
             <div class="col-md-3">
@@ -135,10 +151,34 @@
       </div>
       <div class="modal-body">
         <form #addLeagueForm="ngForm" (ngSubmit)="addLeague()">
-          <div class="form-group">
-              <label for="gameCondition">League Name</label>
-              <input type="text" class="form-control" required>
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="leagueName">League Name</label>
+                <input type="text" name="leagueName" [(ngModel)]="newLeague.name" class="form-control" required #leagueName="ngModel">
+                <div class="alert alert-danger" *ngIf="leagueName.touched && !leagueName.valid">League Name is Required</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Location -->
+              <div class="form-group">
+                <label for="leagueLocation">League Location</label>
+                <input type="text" name="leagueLocation" [(ngModel)]="newLeague.location" class="form-control" required #leagueLocation="ngModel">
+                <div class="alert alert-danger" *ngIf="leagueLocation.touched && !leagueLocation.valid">Please Specify League Location</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Sport ID -->
+              <label for="sport">Sport</label>
+              <select name="sportId" id="sport" class="form-control" [(ngModel)]="newLeague.sportId" required #sportId="ngModel">
+                <option value="" [disabled]></option>
+                <option *ngFor="let sport of sports" value="{{ sport.id }}"> {{ sport.name }} </option>
+              </select>
+              <div class="alert alert-danger" *ngIf="sportId.touched && !sportId.valid">Please Specify the Sport</div>
+            </div>
           </div>
+          
           <div class="row">
             <div class="col-md-3">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -195,10 +235,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #editSportForm="ngForm" (ngSubmit)="updateSport()">
+        <div *ngIf="!mySport">
+          <img src="../../../assets/img/load.gif" alt="loading..." class="spinner">
+        </div>
+        <form #editSportForm="ngForm" *ngIf="mySport" (ngSubmit)="updateSport()">
           <div class="form-group">
-              <label for="gameCondition">Sport Name</label>
-              <input type="text" class="form-control" required>
+              <label for="sportName">Sport Name</label>
+              <input type="text" name="sportName" [(ngModel)]="mySport.name" class="form-control" required>
           </div>
           <div class="row">
             <div class="col-md-3">
@@ -225,17 +268,44 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #editLeagueForm="ngForm" (ngSubmit)="updateLeague()">
-          <div class="form-group">
-              <label for="gameCondition">League Name</label>
-              <input type="text" class="form-control" required>
+        <div *ngIf="!myLeague">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <img class="spinner" src="../../../assets/img/load.gif" alt="loading">
+            </div>
+          </div>
+        </div>
+        <form #editLeagueForm="ngForm" *ngIf="myLeague" (ngSubmit)="updateLeague(myLeague.id)">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="leagueName">League Name</label>
+                  <input type="text" name="leagueName" [(ngModel)]="myLeague.name" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="leagueLocation">League Location</label>
+                <input type="text" name="leagueLocation" [(ngModel)]="myLeague.location" class="form-control" required>
+            </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="sport">Sport</label>
+                <select name="sport" class="form-control" required [(ngModel)]="myLeague.sportId">
+                  <option value="" [disabled]></option>
+                  <option *ngFor="let sport of sports" value="{{sport.id}}"> {{ sport.name }} </option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-3">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
             <div class="col-md-9">
-              <button type="submit" class="btn btn-myInfo btn-block">Save Changes</button>
+              <!-- REMOVE data-dismiss="modal" when the End Point is Working -->
+              <button [disabled]="!editLeagueForm.valid" type="submit" class="btn btn-myInfo btn-block">Save Changes</button>
             </div>
           </div>
       </form>       

@@ -1,3 +1,4 @@
+import { AllSportsResolver } from './_resolvers/all-sports.resolver';
 import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { AllUsersResolver } from './_resolvers/all-users.resolver';
 import { UsersComponent } from './admin/users/users.component';
@@ -50,7 +51,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AdminAuthGuard],
     children: [
-      { path: 'admin/dashboard', component: AdminDashboardComponent },
+      { path: 'admin/dashboard', component: AdminDashboardComponent, resolve: { sports: AllSportsResolver } },
       { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} },
       { path: 'admin/user/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver } }
     ]
