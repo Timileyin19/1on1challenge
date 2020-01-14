@@ -159,6 +159,10 @@ export class AdminDashboardComponent implements OnInit {
       })
   }
 
+  updateCondition() {
+    this.alertify.message('Function not available, Try Later!');
+  }
+
   deleteCondition(id) {
     this.alertify.confirm('Do you want to permanently delete this Condition?', () => {
       this.gameService.deleteCondition(id)
