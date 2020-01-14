@@ -9,7 +9,7 @@
       <div class="col-md-4 text-white myCard">
         <h3>Sports</h3>
         <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addSportModal">Add New Sport</button>
-        <table class="myTable table table-border-bottom text-white mt-1">
+        <table class="myTable table table-responsive table-border-bottom text-white mt-1">
           <thead>
               <tr>
                   <th>Sport</th>
@@ -43,7 +43,7 @@
       <div class="col-md-4 text-white myCard">
         <h3>Leagues</h3>
         <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addLeagueModal">Add New League</button>
-        <table class="myTable table table-border-bottom text-white mt-1">
+        <table class="myTable table table-responsive table-border-bottom text-white mt-1">
           <thead>
               <tr>
                   <th>Name</th>
@@ -81,24 +81,28 @@
       <div class="col-md-4 text-white myCard">
         <h3>Conditions</h3>
         <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addConditionModal">Add New Condition</button>
-        <table class="myTable table table-border-bottom text-white mt-1">
+        <table class="myTable table table-responsive table-border-bottom text-white mt-1">
           <thead>
               <tr>
                   <th>Condition</th>
-                  <th>Edit</th>
+                  <!-- <th>Edit</th> -->
                   <th>Delete</th>
               </tr>
           </thead>
+          <tbody *ngIf="!leagues">
+            <tr>
+              <img class="spinner" src="../../../assets/img/load.gif" alt="Loading...">
+            </tr>
+          </tbody>
           <tbody>
-              <tr>
-                  <td>TeamA Lose - Team B Wins</td>
-                  <td>
-                    <!-- Edit Sport Name -->
+              <tr *ngFor="let condition of conditions">
+                  <td>{{ condition.description }}</td>
+                  <!-- <td>
                     <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editConditionModal" (click)="getCondition()"><i class="icofont-edit text-white"></i></button>
-                  </td>
+                  </td> -->
                   <td>
                     <!-- Delete Sport -->
-                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteCondition()"><i class="icofont-trash text-white"></i></button>
+                    <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="deleteCondition(condition.id)"><i class="icofont-trash text-white"></i></button>
                   </td>
               </tr>
           </tbody>
@@ -207,7 +211,7 @@
         <form #addConditionForm="ngForm" (ngSubmit)="addCondition()">
           <div class="form-group">
               <label for="gameCondition">Condition Name</label>
-              <input type="text" class="form-control" required>
+              <input type="text" name="gameCondition" [(ngModel)]="newCondition.description" class="form-control" required>
           </div>
           <div class="row">
             <div class="col-md-3">
@@ -277,7 +281,7 @@
         </div>
         <form #editLeagueForm="ngForm" *ngIf="myLeague" (ngSubmit)="updateLeague(myLeague.id)">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                   <label for="leagueName">League Name</label>
                   <input type="text" name="leagueName" [(ngModel)]="myLeague.name" class="form-control" required>

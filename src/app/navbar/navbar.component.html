@@ -14,6 +14,9 @@
               <li *ngIf="adminLoggedIn()" class="nav-item active">
                   <a class="nav-link" [routerLink]="['/admin/users']">USERS</a>
               </li>
+              <li *ngIf="adminLoggedIn()" class="nav-item active">
+                  <a class="nav-link" [routerLink]="['/admin/games']">GAMES</a>
+              </li>
           </ul>
 
           <ul class="navbar-nav" id="myDropdown">

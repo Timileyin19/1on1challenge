@@ -101,7 +101,8 @@ table.sportIcons tbody tr td {
 
 /* Dashboard */
 .dashboardBody {
-    background: #152036 !important;     /* due to the bootstrap snippet used */
+    /* background: #152036 !important;     */
+    background: #1c1646 !important;   
     padding-top: 80px; 
 }
 .sticky-top {
@@ -117,10 +118,12 @@ table.sportIcons tbody tr td {
 }
 .dashboard-nav {
     height: 62px;
-    background: #1b2a47 !important;
+    /* background: #1b2a47 !important; */
+    background: #1c1646 !important;
 }
 .dashboard-bg {
-    background: #1b2a47; 
+    /* background: #1b2a47;  */
+    background: #1c1646; 
     color: #fff;
     padding: 1.5rem;
 }

@@ -1,3 +1,241 @@
-<p>
-  games works!
-</p>
+<div class="dashboardBody">
+
+  <!-- Top Navigation Bar -->
+  <app-navbar></app-navbar>
+
+  <div class="container">
+    <h3>Games</h3>
+    <button type="button" class="btn btn-myInfo" data-toggle="modal" data-target="#addGameModal">Add New Game</button>
+    <table class="myTable table table-responsive table-border-bottom text-white mt-1">
+      <thead>
+          <tr>
+              <th>Competitors</th>
+              <th>Competition</th>
+              <th>Game Time</th>
+              <th>Bet Start Time</th>
+              <th>Bet End Time</th>
+              <th>Status</th>
+              <th>Sport</th>
+              <th>League</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody *ngIf="!games">
+        <tr>
+          <img class="spinner" src="../../../assets/img/load.gif" alt="Loading...">
+        </tr>
+      </tbody>
+      <tbody *ngIf="games">
+          <tr *ngFor="let game of games">
+              <td>{{ game.aTeam }} vs {{ game.bTeam }}</td>
+              <td>{{ game.description }}</td>
+              <td>{{ game.startTime | date:'medium' }}</td>
+              <td>{{ game.betStartTime | date:'medium' }}</td>
+              <td>{{ game.betEndTime | date:'medium' }}</td>
+              <td *ngIf="game.isOpen">Open</td>
+              <td *ngIf="!game.isOpen">Closed</td>
+              <td *ngIf="!getSportById(game.sportId)"> <span class="text-muted">Loading Sport Name</span> </td>
+              <td *ngIf="getSportById(game.sportId)"> {{ getSportById(game.sportId).name }} </td>
+              <td *ngIf="!getLeagueById(game.leagueId)">  <span class="text-muted">Loading League Name</span> </td>
+              <td *ngIf="getLeagueById(game.leagueId)"> {{ getLeagueById(game.leagueId).name }} </td>
+              <td>
+                <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editGameModal" (click)="getGame(game.id)"><i class="icofont-edit text-white"></i></button>
+              </td>
+              <td>
+                <button class="btn myBtn btn-sm" (click)="deleteGame()"><i class="icofont-trash text-white"></i></button>
+              </td>
+          </tr>
+      </tbody>
+      
+  </table>
+  </div>
+
+</div>
+
+<!--Add Game Modal -->
+<div class="modal fade" id="addGameModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Game</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addSportForm="ngForm" (ngSubmit)="addGame()">
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="aTeam">Team A</label>
+                  <input type="text" name="aTeam" [(ngModel)]="game.aTeam" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bTeam">Team B</label>
+                <input type="text" name="bTeam" [(ngModel)]="game.bTeam" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="description">Competition Name</label>
+                <input type="text" name="description" [(ngModel)]="game.description" placeholder="World Cup Final" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="startTime">Game Start Time</label>
+                <input type="datetime-local" name="startTime" [(ngModel)]="game.startTime" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="betStartTime">Bet Start Time</label>
+                <input type="datetime-local" name="betStartTime" [(ngModel)]="game.betStartTime" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="betEndTime">Bet End Time</label>
+                <input type="datetime-local" name="betEndTime" [(ngModel)]="game.betEndTime" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="isOpen">Bet Status</label>
+                <select class="form-control" name="isOpen" [(ngModel)]="game.isOpen" required>
+                  <option value="" [disabled]></option>
+                  <option value=true>Open</option>
+                  <option value=false>Close</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="sportId">Sport</label>
+                <select name="sportId" id="sportId" class="form-control" [(ngModel)]="game.sportId" required>
+                  <option value="" [disabled]></option>
+                  <option value="{{sport.id}}" *ngFor="let sport of sports">{{ sport.name }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="leagueId">League</label>
+                <select name="leagueId" id="leagueId" class="form-control" [(ngModel)]="game.leagueId" required>
+                  <option value="" [disabled]></option>
+                  <option value="{{league.id}}" *ngFor="let league of leagues">{{ league.name }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!addSportForm.valid"  type="submit" class="btn btn-myInfo btn-block">Add Game</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Edit Game Modal -->
+<div class="modal fade" id="editGameModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Game Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="!myGame">
+          <img class="spinner" src="../../../assets/img/load.gif" alt="loading...">
+        </div>
+        <form *ngIf="myGame" #editGameForm="ngForm" (ngSubmit)="updateGame()">
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="aTeam">Team A</label>
+                  <input type="text" name="aTeam" [(ngModel)]="myGame.aTeam" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bTeam">Team B</label>
+                <input type="text" name="bTeam" [(ngModel)]="myGame.bTeam" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="description">Competition Name</label>
+                <input type="text" name="description" [(ngModel)]="myGame.description" placeholder="World Cup Final" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="startTime">Game Start Time</label>
+                <input type="datetime-local" name="startTime" [(ngModel)]="myGame.startTime" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="betStartTime">Bet Start Time</label>
+                <input type="datetime-local" name="betStartTime" [(ngModel)]="myGame.betStartTime" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="betEndTime">Bet End Time</label>
+                <input type="datetime-local" name="betEndTime" [(ngModel)]="myGame.betEndTime" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="isOpen">Bet Status</label>
+                <select class="form-control" name="isOpen" [(ngModel)]="myGame.isOpen" required>
+                  <option value="" [disabled]></option>
+                  <option value=true>Open</option>
+                  <option value=false>Close</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="sportId">Sport</label>
+                <select name="sportId" id="sportId" class="form-control" [(ngModel)]="myGame.sportId" required>
+                  <option value="" [disabled]></option>
+                  <option value="{{sport.id}}" *ngFor="let sport of sports">{{ sport.name }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="leagueId">League</label>
+                <select name="leagueId" id="leagueId" class="form-control" [(ngModel)]="myGame.leagueId" required>
+                  <option value="" [disabled]></option>
+                  <option value="{{league.id}}" *ngFor="let league of leagues">{{ league.name }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!editGameForm.valid"  type="submit" class="btn btn-myInfo btn-block">Update Game</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>

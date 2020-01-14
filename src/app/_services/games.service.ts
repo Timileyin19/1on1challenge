@@ -10,13 +10,30 @@ export class GamesService {
 
   constructor(private http: HttpClient) { }
 
+  addGame(game) {
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    return this.http.post<any[]>(this.baseUrl + 'game/create' , game, httpOptions);
+  }
+
+  updateGame(id, game) {
+    return this.http.put(this.baseUrl + 'game/update/' + id, game);
+  }
+
+  getGames() {
+    return this.http.get(this.baseUrl + 'game/getallgames');
+  }
+
+  getGame(id) {
+    return this.http.get(this.baseUrl + 'game/getgame/' + id);
+  }
+
+  deleteGame(id) {
+    return this.http.delete(this.baseUrl + 'game/delete/' + id);
+  }
+
   addSport(sport) {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
     return this.http.post<any[]>(this.baseUrl + 'sport/create' , sport, httpOptions);
-  }
-  
-  updateSport(sport) {
-    // No API end point for it yet
   }
 
   getSports() {
@@ -52,6 +69,21 @@ export class GamesService {
 
   deleteLeague(id) {
     return this.http.delete(this.baseUrl + 'league/delete/' + id);
+  }
+
+
+  addCondition(condition) {
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    return this.http.post<any[]>(this.baseUrl + 'condition/create' , condition, httpOptions);
+  }
+
+  getConditions() {
+    return this.http.get(this.baseUrl + 'condition/getall');
+  }
+
+
+  deleteCondition(id) {
+    return this.http.delete(this.baseUrl + 'condition/delete/' + id);
   }
 
 }

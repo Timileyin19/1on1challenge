@@ -14,6 +14,7 @@ export class AdminDashboardComponent implements OnInit {
   leagues: any[];
   newSport: any = {};
   newLeague: any = {};
+  newCondition: any = {};
   mySport;
   myLeague;
 
@@ -37,6 +38,13 @@ export class AdminDashboardComponent implements OnInit {
         this.allLeagues(res);
       }, error => {
         console.log('Get Leagues Error = ', error);
+      });
+
+    this.gameService.getConditions() 
+      .subscribe( res => {
+        this.allConditions(res);
+      }, error => {
+        console.log('Get Conditions Error = ', error);
       })
   }
 
@@ -136,21 +144,31 @@ export class AdminDashboardComponent implements OnInit {
     });
   }
 
-  getCondition() {
-    console.log('Get Condition need ID');
+  allConditions(conditions){
+    this.conditions = conditions;
   }
-
-  deleteCondition() {
-    console.log('Delete Condition need ID');
-  }
-
 
   addCondition() {
-    console.log('Add Condition');
+    var condition = JSON.stringify(this.newCondition);
+    this.gameService.addCondition(condition)
+      .subscribe(() => {
+        this.alertify.success('Condition Added Successfully');
+        location.reload();
+      }, error => {
+        this.alertify.error('Failed to Add Condition, Try Again');
+      })
   }
 
-  updateCondition() {
-    console.log('Update Condition');
+  deleteCondition(id) {
+    this.alertify.confirm('Do you want to permanently delete this Condition?', () => {
+      this.gameService.deleteCondition(id)
+        .subscribe(() => {
+          this.conditions.splice(this.conditions.findIndex(l => l.id == id), 1);
+          this.alertify.message('Condition Deleted Successfully');
+        }, error => {
+          this.alertify.error('Failed to Delete, please try again');
+        })
+    });
   }
 
 }

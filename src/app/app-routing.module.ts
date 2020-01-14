@@ -21,6 +21,9 @@ import { DashboardChallengeComponent } from './dashboard-challenge/dashboard-cha
 import { AuthGuard } from './_guards/auth.guard';
 import { AdminAuthGuard } from './_guards/admin-auth.guard';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { GamesComponent } from './admin/games/games.component';
+import { AllGamesResolver } from './_resolvers/all-games.resolver';
+import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -52,6 +55,7 @@ const routes: Routes = [
     canActivate: [AdminAuthGuard],
     children: [
       { path: 'admin/dashboard', component: AdminDashboardComponent, resolve: { sports: AllSportsResolver } },
+      { path: 'admin/games', component: GamesComponent, resolve: { games: AllGamesResolver, sports: AllSportsResolver, leagues: AllLeaguesResolver } },
       { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} },
       { path: 'admin/user/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver } }
     ]

@@ -35,6 +35,8 @@ import { AdminAuthGuard } from './_guards/admin-auth.guard';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { AllGamesResolver } from './_resolvers/all-games.resolver';
+import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
 
 
 export function tokenGetter() {
@@ -86,8 +88,10 @@ export function tokenGetter() {
     AuthGuard,
     AdminAuthGuard,
     UserService,
+    AllGamesResolver,
     AllSportsResolver,
     AllUsersResolver,
+    AllLeaguesResolver,
     UserDetailResolver
   ],
   bootstrap: [AppComponent]
