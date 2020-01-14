@@ -100,9 +100,12 @@ table.sportIcons tbody tr td {
 }
 
 /* Dashboard */
+.dashboardBGColor {
+    background: #1c1646 !important;    
+}
 .dashboardBody {
-    /* background: #152036 !important;     */
-    background: #1c1646 !important;   
+    background: #152036 !important;    
+    /* background: #1c1646 !important;    */
     padding-top: 80px; 
 }
 .sticky-top {
@@ -114,7 +117,8 @@ table.sportIcons tbody tr td {
 }
 .myCard {
     /* border-bottom: 1.5px solid blue; */
-    background-color: #1b2a47;
+    /* background-color: #1b2a47; */
+    background-color: #1c1646;
 }
 .dashboard-nav {
     height: 62px;
@@ -272,7 +276,7 @@ button.my-form-btn-dropdown {
   /* Profile sidebar */
   .profile-sidebar {
     padding: 20px 0 10px 0 !important;
-    background: #1b2a47 !important;
+    background: #1c1646 !important;
     height: 100%;
   }
   

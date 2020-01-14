@@ -13,7 +13,7 @@
                       <div class="row mb-4">
                           <div class="col-12">
                               <div class="dashboard-bg p-3">
-                                  <p class="text-white mb-0">Wallet Address: <strong>08908655555</strong>  <span class="float-right">17th October, 2019</span> </p>
+                                  <p class="text-white mb-0">Wallet Address: <strong *ngIf="detailedUser">{{ detailedUser.walletAddress }}</strong>  <span class="float-right">{{ jstoday }}</span> </p>
                               </div>
                           </div>
                       </div>
@@ -22,7 +22,7 @@
                          <div class="col-md-4 text-white">
                              <div class="card myCard">
                                  <div class="card-body">
-                                      <h3>#107,000</h3>
+                                      <h3 *ngIf="detailedUser">{{ detailedUser.balance | currency: 'NGN' }}</h3>
                                       <p><span><i class="icofont-wallet font-increase"></i></span><span class="float-right">Wallet Balance</span> </p>
                                  </div>
                                  <div class="progress progress-mini">

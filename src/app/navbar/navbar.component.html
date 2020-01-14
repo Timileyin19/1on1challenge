@@ -24,12 +24,15 @@
 
           <ul class="navbar-nav" id="myDropdown">
              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Marcus Doe
+                  <a *ngIf="authService.decodedToken" class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Hi, {{ authService.decodedToken.unique_name | titlecase }}
+                  </a>
+                  <a *ngIf="!authService.decodedToken" class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Welcome Admin
                   </a>
                   
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" [routerLink]="['/dashboard/account']"><i class="icofont-user-alt-5"></i> My Account</a>
+                      <a *ngIf="!adminLoggedIn()" class="dropdown-item" [routerLink]="['/dashboard/account']"><i class="icofont-user-alt-5"></i> My Account</a>
                       <a class="dropdown-item" (click)="logout()"><i class="icofont-logout"></i> Log Out</a>
                   </div>
              </li> 
