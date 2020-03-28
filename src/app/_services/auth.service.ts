@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -12,8 +13,9 @@ export class AuthService {
   jwtHelper = new JwtHelperService();
   decodedToken: any;
   currentUser: any;
+  detailedUser: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private user: UserService) { }
 
   login(model: any) {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
@@ -22,6 +24,7 @@ export class AuthService {
           map((response: any) => {
             const user = response;
             if (user) {
+              localStorage.removeItem('admin');
               localStorage.setItem('token', user.token);
               localStorage.setItem('user', JSON.stringify(user.userDto));
               this.decodedToken = this.jwtHelper.decodeToken(user.token);

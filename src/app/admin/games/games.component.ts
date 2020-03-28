@@ -1,7 +1,13 @@
 import { AlertifyService } from './../../_services/alertify.service';
 import { GamesService } from './../../_services/games.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DataTableDirective } from 'angular-datatables';
+// Angular Material Table
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-games',
@@ -9,13 +15,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  games: any[];
+  // @ViewChild(DataTableDirective)
+  // dtElement: DataTableDirective;
+  // title = 'angulardatatables';
+  // dtTrigger: Subject<any> = new Subject();
+  // dtOptions: any = {};
+
+  tableColumns  :  string[] = ['competitors', 'competition', 'gameTime', 'betStartTime', 'betEndTime', 'status', 'sport', 'league', 'edit', 'delete'];
+  
+  dataSource: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+ 
+  // this.dataSource = new MatTableDataSource(users);
+
+  games;
   sports;
   leagues;
   game: any = {};
   myGame;
+  searchKey: string;
 
-  constructor(private gameService: GamesService, private route: ActivatedRoute, private alertify: AlertifyService) { }
+  constructor(private gameService: GamesService, private route: ActivatedRoute, private alertify: AlertifyService) {
+   }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -24,7 +47,44 @@ export class GamesComponent implements OnInit {
       this.leagues = data['leagues'];
     });
 
+    this.dataSource = new MatTableDataSource(this.games);
+
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
+    // this.dtOptions = {
+    //   pagingType: 'full_numbers',
+    //   pageLength: 5,
+    //   processing: true
+    // };
   }
+
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.dataSource.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
+
+  // rerender(): void {
+  //   this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+  //     // destroy the table first
+  //     dtInstance.destroy();
+  //     // call the dtTrigger to rerender again 
+  //     this.dtTrigger.next();
+  //   });
+  // }
 
   getSportById(id) {
     var sport, sports = this.sports;

@@ -114,6 +114,7 @@ export class AdminDashboardComponent implements OnInit {
     this.gameService.addLeague(league)
       .subscribe( () => {
         this.alertify.success('League Added Successfully');
+        location.reload();
       }, error => {
         this.alertify.error('Failed, Please try Again');
         console.log('Add League Error - ', error);
@@ -125,8 +126,8 @@ export class AdminDashboardComponent implements OnInit {
       .subscribe(res => {
         if (res != null)
           this.alertify.success('League Updated Successfully');
-
-          this.alertify.message('Service Not Available, Try Later');
+          location.reload();
+          // this.alertify.message('Service Not Available, Try Later');
       }, error => {
         console.log('League Update Error - ' , error);
       })
