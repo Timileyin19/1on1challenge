@@ -15,28 +15,28 @@
                           <div class="col-12">
                               <div class="dashboard-bg p-3">
                                       <h5 class="text-white">My Profile</h5>
-                                  <p class="text-white mb-0 text-muted">Edit and Update your Profile Details  <span class="float-right">17th October, 2019</span> </p>
+                                  <p class="text-white mb-0">Edit and Update your Profile Details  <span class="float-right">{{ jstoday }}</span> </p>
                               </div>
                           </div>
                       </div>
                       
   
-                     <!-- Staked Games Table -->
+                     <!-- User Bio Data Form -->
                      <div class="row mt-4">
                          <div class="col-md-12">
                              <div class="dashboard-bg p-3">
-                              <form>
+                              <form #userDetailsForm="ngForm" *ngIf="detailedUser" (ngSubmit)="updateProfile()">
                                   <div class="row">
                                      <div class="col-md-6">
                                           <div class="form-group">
                                               <label for="fullName" class="text-muted mb-0">Full Name</label>
-                                              <input type="text" value="Marcus Doe" class="form-control" placeholder="Full Name">
+                                              <input type="text" name="fullName" class="form-control" placeholder="Full Name" [(ngModel)]="detailedUser.fullName" required>
                                           </div>
                                      </div>
                                      <div class="col-md-6">
                                           <div class="form-group">
-                                              <label for="DOB" class="text-muted mb-0">Date of Birth</label>
-                                              <input type="date" class="form-control" placeholder="Date of Birth">
+                                              <label for="age" class="text-muted mb-0">Age</label>
+                                              <input type="text" name="age" class="form-control" placeholder="Age" [(ngModel)]="detailedUser.age" readonly>
                                           </div>
                                      </div>
                                   </div>
@@ -44,12 +44,12 @@
                                      <div class="col-md-6">
                                           <div class="form-group">
                                               <label for="phoneNumber" class="text-muted mb-0">Phone Number</label>
-                                              <input type="text" value="+2348034988051" class="form-control" placeholder="Phone Number">
+                                              <input type="text" name="phoneNumber" class="form-control" placeholder="Phone Number" [(ngModel)]="detailedUser.phoneNumber" required>
                                           </div>
                                      </div>
                                      <div class="col-md-6">
                                           <div class="form-group">
-                                              <label for="DOB" class="text-muted mb-0">Change or Upload Display Picture</label>
+                                              <label for="profilePics" class="text-muted mb-0">Change or Upload Display Picture</label>
                                               <input type="file" placeholder="Display Picture">
                                           </div>
                                      </div>
@@ -58,7 +58,7 @@
                                       <div class="col-md-12">
                                           <div class="form-group">
                                               <label for="address" class="text-muted mb-0">Contact Address</label>
-                                              <input type="text" class="form-control">
+                                              <input type="text" name="address" class="form-control">
                                           </div> 
                                       </div>
                                   </div>
@@ -66,13 +66,13 @@
                                       <div class="col-md-6">
                                           <div class="form-group">
                                               <label for="city" class="text-muted mb-0">City</label>
-                                              <input type="text" class="form-control">
+                                              <input type="text" name="city" class="form-control" [(ngModel)]="detailedUser.city" required>
                                           </div>
                                       </div>
                                       <div class="col-md-6">
                                           <div class="form-group">
                                               <label for="country" class="text-muted mb-0">Country</label>
-                                              <input type="text" class="form-control">
+                                              <input type="text" name="country" class="form-control" [(ngModel)]="detailedUser.country" required>
                                           </div>
                                       </div>
                                   </div>
@@ -82,7 +82,10 @@
                                       </div>
                                   </div>
                               </form>
-                             
+
+                              <div *ngIf="!detailedUser">
+                                  <img src="../../assets/img/load.gif" alt="Loading User Details..." class="spinner">
+                              </div>
                          </div>
                      </div>
               </div>

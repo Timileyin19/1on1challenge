@@ -2,6 +2,7 @@ import { UserService } from './../_services/user.service';
 import { AuthService } from './../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { GamesService } from '../_services/games.service';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -9,18 +10,31 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./dashboard-home.component.css']
 })
 export class DashboardHomeComponent implements OnInit {
+  bets;
   user;
   today = new Date();
   jstoday = '';
 
-  constructor(private authService: AuthService, private userService: UserService) {
+  // It is the CRUD of "BET" that I will use to manipulate this functionality
+
+  constructor(private gameService: GamesService) {
     this.jstoday = formatDate(this.today, 'MMM d, y', 'en-US');
-    // this.user = JSON.parse(localStorage.getItem('user'));
    }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('user'));
-    console.log(this.user);
+
+    this.gameService.getBets()
+      .subscribe(data => {
+        this.setBets(data);
+      }, error => {
+        console.log("Error while fetching Bets: ", error);
+      })
+  }
+
+  setBets(bets) {
+    this.bets = bets;
+    console.log(this.bets);
   }
 
 }
@@ -40,4 +54,5 @@ export class DashboardHomeComponent implements OnInit {
 // walletAddress: "9f0bbf98-293f-4361-80c5-88af006344be"
 // balance: 0
 // email: "deletaiwo@gmail.com"
+
 

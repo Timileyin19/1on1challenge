@@ -10,6 +10,27 @@ export class GamesService {
 
   constructor(private http: HttpClient) { }
 
+  addBet(bet) {
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    return this.http.post<any[]>(this.baseUrl + 'bet/create' , bet, httpOptions);
+  }
+
+  updateBet(id, bet) {
+    return this.http.put(this.baseUrl + 'bet/update/' + id, bet);
+  }
+
+  getBets() {
+    return this.http.get(this.baseUrl + 'bet/getallbet');
+  }
+
+  getBet(id) {
+    return this.http.get(this.baseUrl + 'bet/getbet/' + id);
+  }
+
+  deleteBet(id) {
+    return this.http.delete(this.baseUrl + 'game/delete/' + id);
+  }
+
   addGame(game) {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
     return this.http.post<any[]>(this.baseUrl + 'game/create' , game, httpOptions);

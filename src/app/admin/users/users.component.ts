@@ -1,8 +1,11 @@
 import { AlertifyService } from './../../_services/alertify.service';
 import { UserService } from './../../_services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/_models/user';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-users',
@@ -10,16 +13,39 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
+  tableColumns  :  string[] = ['id', 'fullName', 'username', 'gender', 'city', 'country', 'age', 'lastActive', 'edit', 'viewDetails', 'delete'];
+
+  dataSource: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
   users: User[];
   myUser;
   updateUser: any = {};
+  searchKey: string;
 
   constructor(private userService: UserService, private aletify: AlertifyService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.users = data['users'];
-    })
+    });
+
+    this.dataSource = new MatTableDataSource(this.users);
+
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
   userDetail(id) {

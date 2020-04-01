@@ -7,12 +7,13 @@
     <div class="d-table-row">
       <div class="col-md-12">
         <h5 class="text-white text-center"> All Users  </h5>
-        <div class="table-responsive dashboard-bg p-3">
+
+        <!-- The Normal Users Table -->
+        <!-- <div class="table-responsive dashboard-bg p-3">
           <table class="myTable table text-white">
               <thead>
                   <tr>
                       <th>User Id</th>
-                      <!-- <th>Picture</th> -->
                       <th>Full Name</th>
                       <th>Username</th>
                       <th>Gender</th>
@@ -28,9 +29,6 @@
               <tbody>
                   <tr *ngFor="let user of users">
                       <td>{{ user.id }}</td>
-                      <!-- <td *ngIf="user.profilePicLink">
-                        <div [style.backgroundImage]="'url(' + user.profilePicLink + ')'" class="thumbnail" alt="user.username"></div>
-                      </td> -->
                       <td> {{ user.fullName }} </td>
                       <td> {{ user.username }} </td>
                       <td> {{ user.gender }}</td>
@@ -50,7 +48,6 @@
                   </tr>
               </tbody>
           </table>
-          <!-- Pagination -->
           <ul class="myPagination pagination">
               <li class="page-item"><a class="page-link text-white" href="#">Previous</a></li>
               <li class="page-item"><a class="page-link text-white" href="#">1</a></li>
@@ -58,8 +55,105 @@
               <li class="page-item"><a class="page-link text-white" href="#">3</a></li>
               <li class="page-item"><a class="page-link text-white" href="#">Next</a></li>
           </ul>
-     
-      </div>
+      </div> -->
+
+        <!-- Users Table display using Angular Material -->
+        <div class="search-div">
+          <!-- <button mat-raised-button data-toggle="modal" data-target="#addGameModal">
+            <mat-icon>add</mat-icon>Create Game
+          </button> -->
+          <mat-form-field class="search-form-field" floatLabel="never">
+            <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> User Id </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.id }} </mat-cell>
+            </ng-container>
+        
+            <!-- FullName Column -->
+            <ng-container matColumnDef="fullName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.fullName }} </mat-cell>
+            </ng-container>
+        
+            <!--Username Column -->
+            <ng-container matColumnDef="username">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Username </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.username }} </mat-cell>
+            </ng-container>
+    
+            <!-- Gender Column -->
+            <ng-container matColumnDef="gender">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.gender }} </mat-cell>
+            </ng-container>
+    
+             <!-- City Column -->
+            <ng-container matColumnDef="city">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.city }} </mat-cell>
+            </ng-container>
+    
+             <!-- Country Column -->
+             <ng-container matColumnDef="country">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Country </mat-header-cell>
+              <mat-cell *matCellDef="let user">{{ user.country }}</mat-cell>
+              <!-- <td mat-cell *matCellDef="let game" *ngIf="!game.isOpen">Closed</td> -->
+            </ng-container> 
+            
+            <!-- Age Column -->
+            <ng-container matColumnDef="age">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Age </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.age }} </mat-cell>
+            </ng-container>
+    
+            <!-- Last Active Column -->
+            <ng-container matColumnDef="lastActive">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Last Active </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{ user.lastActive | date }} </mat-cell>
+            </ng-container>
+
+            <!-- Edit Column -->
+            <ng-container matColumnDef="edit">
+              <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+              <mat-cell *matCellDef="let user"> 
+                <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#editUserModal" (click)="getUser(user.id)"><i class="icofont-edit text-white"></i></button>  
+              </mat-cell>
+            </ng-container>
+    
+            <!-- View-More-User-Detail Column -->
+            <ng-container matColumnDef="viewDetails">
+              <mat-header-cell *matHeaderCellDef> View </mat-header-cell>
+              <mat-cell *matCellDef="let user"> 
+                <button class="btn btn-myInfo btn-sm" (click)="userDetail(user.id)">More Detail</button>  
+              </mat-cell>
+            </ng-container>
+
+            <!-- Delete Column -->
+            <ng-container matColumnDef="delete">
+              <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+              <mat-cell *matCellDef="let user"> 
+                <button class="btn myBtn btn-sm" (click)="deleteUser(user.id)"><i class="icofont-trash text-white"></i></button>  
+              </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: tableColumns;"></mat-row>
+            
+          </mat-table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+        </div>
+
       </div>
     </div>
   </div>

@@ -64,3 +64,10 @@ mat-footer-row mat-footer-cell {
 .mat-form-field {
     width: 86% !important;
 }
+.mat-table {
+    width: 1000px;
+}
+.mat-cell, .mat-footer-cell {
+    padding: 12px;
+}
+

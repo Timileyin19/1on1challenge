@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
       .subscribe(next => {
         this.alertify.success('Logged in Successfully');
       }, error => {
-        this.alertify.error(error);
+        this.alertify.error('Log in Failed, Please Try Again');
+        console.log('User Login Error: ' , error); 
       }, () => {
         this.router.navigate(['/dashboard']);
       })

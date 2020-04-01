@@ -52,7 +52,7 @@
       
   </table> -->
 
-  
+
   <!-- Data Table -->
   <!-- <table datatable [dtOptions]="dtOptions" class="table table-striped table-sm text-white">
     <thead>
@@ -104,10 +104,6 @@
         </button>
       </mat-form-field>
     </div>
-    <!-- <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Example: Arsenal">
-    </mat-form-field> -->
     
     <div class="mat-elevation-z8">
       <mat-table [dataSource]="dataSource" matSort>
@@ -120,7 +116,7 @@
     
         <!-- Competition Column -->
         <ng-container matColumnDef="competition">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Ccompetition </mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Competition </mat-header-cell>
           <mat-cell *matCellDef="let game"> {{ game.description }} </mat-cell>
         </ng-container>
     
@@ -178,43 +174,15 @@
             <button class="btn myBtn btn-sm" (click)="deleteGame()"><i class="icofont-trash text-white"></i></button>  
           </mat-cell>
         </ng-container>
-
-        <!-- What to show while the Data is loading -->
-        <!-- <ng-container matColumnDef="loading">
-          <mat-footer-cell *matFooterCellDef colspan="9">
-            Loading data...
-          </mat-footer-cell>
-        </ng-container> -->
-
-        <!-- Incase there is no data to display -->
-        <!-- <ng-container matColumnDef="noData">
-          <mat-footer-cell *matFooterCellDef colspan="9">
-            No data to display.
-          </mat-footer-cell>
-        </ng-container> -->
     
         <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: tableColumns;"></mat-row>
-       
-        <!-- <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource=null}"></mat-footer-row>
-        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource=null && dataSource.data.length=0)}"></mat-footer-row> -->
+
       </mat-table>
     
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
     </div>
-    
-    <!-- <mat-table [dataSource]="games">
-      <ng-container matColumnDef="competitors">
-        <mat-header-cell *matHeaderCellDef>Competitors</mat-header-cell>
-        <mat-cell *matCellDef="let competitors"></mat-cell>
-      </ng-container>
 
-
-      
-      <mat-header-row *matHeaderRowDef="tableGames"></mat-header-row>
-      <mat-row *matRowDef="let game; columns: tableGames"></mat-row>
-      
-    </mat-table> -->
   </div>
 
 </div>

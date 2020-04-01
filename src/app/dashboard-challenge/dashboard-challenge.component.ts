@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard-challenge',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardChallengeComponent implements OnInit {
 
-  constructor() { }
+  // HINT: Populate the Table Using the "Bet" endpoint and if the User challenge any of the Bet, then just do an update functionality on the say "Bet" endpoint
+
+  today = new Date();
+  jstoday = '';
+
+
+  constructor() { 
+    this.jstoday = formatDate(this.today, 'MMM d, y', 'en-US');
+  }
 
   ngOnInit() {
   }

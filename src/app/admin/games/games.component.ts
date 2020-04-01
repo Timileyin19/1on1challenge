@@ -15,11 +15,6 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  // @ViewChild(DataTableDirective)
-  // dtElement: DataTableDirective;
-  // title = 'angulardatatables';
-  // dtTrigger: Subject<any> = new Subject();
-  // dtOptions: any = {};
 
   tableColumns  :  string[] = ['competitors', 'competition', 'gameTime', 'betStartTime', 'betEndTime', 'status', 'sport', 'league', 'edit', 'delete'];
   
@@ -27,8 +22,6 @@ export class GamesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
- 
-  // this.dataSource = new MatTableDataSource(users);
 
   games;
   sports;
@@ -51,12 +44,6 @@ export class GamesComponent implements OnInit {
 
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
-    // this.dtOptions = {
-    //   pagingType: 'full_numbers',
-    //   pageLength: 5,
-    //   processing: true
-    // };
   }
 
   onSearchClear() {
