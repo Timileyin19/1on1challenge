@@ -18,7 +18,7 @@ export class AllGamesResolver implements Resolve<any[]> {
             .pipe(
                     catchError(error => {
                         this.alertify.error('Problem retriving data');
-                        this.router.navigate(['/admin/users']);
+                        this.router.navigate(['/home']);
                         return of(null);
                     })
             );

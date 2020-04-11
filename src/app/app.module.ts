@@ -46,6 +46,7 @@ import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { AllGamesResolver } from './_resolvers/all-games.resolver';
 import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
+import { AllBetsResolver } from './_resolvers/all-bets.resolver';
 
 
 export function tokenGetter() {
@@ -105,6 +106,7 @@ export function tokenGetter() {
     AuthGuard,
     AdminAuthGuard,
     UserService,
+    AllBetsResolver,
     AllGamesResolver,
     AllSportsResolver,
     AllUsersResolver,

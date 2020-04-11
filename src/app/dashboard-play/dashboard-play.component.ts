@@ -16,6 +16,8 @@ export class DashboardPlayComponent implements OnInit {
   // HINT: Use "Games" to populate the Table and when the User predict any Game, add it to "Bet"
   // NB: Only the Games that have their "Status" as "true" will only be available for the User to be predicted
 
+  // Advice: The table of this component has deform, copy the table of the "dashboard-home" component
+
 
   today = new Date();
   jstoday = '';

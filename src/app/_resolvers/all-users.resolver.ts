@@ -17,7 +17,7 @@ export class AllUsersResolver implements Resolve<User[]> {
             .pipe(
                     catchError(error => {
                         this.alertify.error('Problem retriving data');
-                        this.router.navigate(['/admmin/dashboard']);
+                        this.router.navigate(['/home']);
                         return of(null);
                     })
             );

@@ -60,7 +60,33 @@
                          <div class="col-md-12">
                              <div class="dashboard-bg p-3">
                                   <h5 class="text-white pb-3">Ongoing Staked Games</h5>
-                                  <table class="myTable table table-border-bottom text-white">
+                                  <!-- This is the Bet that the User has Set-up as Bet -->
+                                  <table class="myTable table table-border-bottom text-white" *ngIf="bets">
+                                      <thead *ngIf="onGoingGames.length > 0">
+                                          <tr>
+                                            <th>Game Name</th>
+                                            <th>Sport Category</th>
+                                            <th>Competition/League</th>
+                                            <th>Staked Amount</th>
+                                            <th>Status</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody *ngIf="onGoingGames.length > 0">
+                                          <tr *ngFor="let game of onGoingGames">
+                                              <td>{{ getGameByID(game.gameId).aTeam }} : {{ getGameByID(game.gameId).bTeam }} </td>
+                                              <td> {{ getSportByID(getGameByID(game.gameId).sportId).name }} </td>
+                                              <td> {{ getLeagueByID(+getGameByID(game.gameId).leagueId).name }} </td>
+                                              <td> {{ game.betAmount | currency:'NGN' }} </td>
+                                              <td> {{ game.predictorId == user.id ? 'Predictor' : 'Challenger' }} </td>
+                                          </tr>
+                                      </tbody>
+                                      <tbody *ngIf="onGoingGames.length == 0">
+                                          <p>You do not have any Ongoing Stake Game</p>
+                                      </tbody>
+                                  </table>
+
+                                  <!-- This Table should be Comment Out -->
+                                  <!-- <table class="myTable table table-border-bottom text-white">
                                       <thead>
                                           <tr>
                                               <th>Game Name</th>
@@ -100,7 +126,8 @@
                                               <td>Challenger</td>
                                           </tr>
                                       </tbody>
-                                  </table>
+                                  </table> -->
+                                  
                                   <!-- Pagination -->
                                   <ul class="myPagination pagination">
                                       <li class="page-item"><a class="page-link text-white" href="#">Previous</a></li>

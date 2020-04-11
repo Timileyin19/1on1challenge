@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable() 
-export class AllLeaguesResolver implements Resolve<any[]> {
+export class AllBetsResolver implements Resolve<any[]> {
 
     constructor(private gameService: GamesService, private router: Router, private alertify: AlertifyService) {}
 
     // resolve automatically subscribe to an observable by itself
     resolve(route: ActivatedRouteSnapshot): Observable<any[]> {
-        return this.gameService.getLeagues()
+        return this.gameService.getBets()
             .pipe(
                     catchError(error => {
                         this.alertify.error('Problem retriving data');

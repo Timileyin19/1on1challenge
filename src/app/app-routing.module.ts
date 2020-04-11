@@ -24,6 +24,7 @@ import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { GamesComponent } from './admin/games/games.component';
 import { AllGamesResolver } from './_resolvers/all-games.resolver';
 import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
+import { AllBetsResolver } from './_resolvers/all-bets.resolver';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -39,13 +40,14 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      {path: 'dashboard', component: DashboardHomeComponent },
+      {path: 'dashboard', component: DashboardHomeComponent, resolve: { games: AllGamesResolver, sports: AllSportsResolver, leagues: AllLeaguesResolver, bets: AllBetsResolver } },
       {path: 'dashboard/account', component: DashboardMyAccountComponent },
       {path: 'dashboard/challenge', component: DashboardChallengeComponent },
       {path: 'dashboard/game', component: DashboardMyGamesComponent },
       {path: 'dashboard/play', component: DashboardPlayComponent },
     ]
   },
+  
 
   // Admin Route
   { path: '1on1-admin', component: AdminLoginComponent},
