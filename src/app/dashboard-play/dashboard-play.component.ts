@@ -2,9 +2,7 @@ import { AlertifyService } from './../_services/alertify.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { GamesService } from '../_services/games.service';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-play',
@@ -22,36 +20,59 @@ export class DashboardPlayComponent implements OnInit {
   today = new Date();
   jstoday = '';
 
+  conditions;
+  game;
   games;
   leagues;
+  openGames : any[] = [];
+  setConditionNamount = {
+    condition: null,
+    amount: 0
+  };
+  user;
 
-  constructor(private gameService: GamesService, private alertify: AlertifyService) { 
+  constructor(private gameService: GamesService, private alertify: AlertifyService, private route: ActivatedRoute) { 
     this.jstoday = formatDate(this.today, 'MMM d, y', 'en-US');
    }
 
   ngOnInit() {
-    this.gameService.getGames()
-      .subscribe(data => {
-        this.setGames(data);
-      }, error => {
-        console.log("Error while fetching Game: ", error);
-      });
 
-      this.gameService.getLeagues()
-        .subscribe(data => {
-          this.setLeagues(data);
+    this.user = JSON.parse(localStorage.getItem('user'));
+
+    this.route.data.subscribe(data => {
+      this.games = data['games'];
+      this.leagues = data['leagues'];
+      this.conditions = data['conditions'];
+    });
+
+    this.setOpenGames();
+  }
+
+  createBet() {
+    if (this.setConditionNamount.amount >= 100) {
+      var bet = {
+        gameId: this.game.id,
+        creationDate: new Date(),
+        conditionId: parseInt(this.setConditionNamount.condition),
+        predictorId: this.user.id,
+        challengerId: 0,
+        betAmount: this.setConditionNamount.amount,
+        betLink: 'https://1on1sport.netlify.com/dashboard/play/' + this.user.id + '/' + this.game.id ,
+        winnersId: 0,
+        loosersId: 0,
+        amountWon: 0 
+      };
+
+      this.gameService.addBet(bet)
+        .subscribe((res) => {
+          this.alertify.success('Bet created Successfully');
+          location.reload();
         }, error => {
-          console.log("Error while fetching League: ", error);
+          console.log('Error while creating Bet: ', error);
         });
-  }
-
-  setGames(games) {
-    this.games = games;
-    // console.log( this.games);
-  }
-
-  setLeagues(leagues) {
-    this.leagues = leagues;
+    } else {
+      this.alertify.message('Minimum Bet Amount is NGN100');
+    }
   }
 
   getLeagueById(id) {
@@ -64,13 +85,23 @@ export class DashboardPlayComponent implements OnInit {
   }
 
   getGameByID(id) {
+    this.game = null;
     var game, games = this.games;
     for (let g of games) {
       if (g.id == id) 
         game = g; 
     }
-    // console.log(game);
-    return game;
+    this.game = game;
+  }
+
+  setOpenGames() {
+    if (this.games) {
+      this.games.forEach(game => {
+        if(game.isOpen == true) {
+          this.openGames.push(game);
+        }
+      });
+    }
   }
 
 }
@@ -87,3 +118,22 @@ export class DashboardPlayComponent implements OnInit {
 // league: null
 // sportId: 2
 // leagueId: 2
+
+
+// Data Type to Create Bet  
+// "gameId": 0,
+// "creationDate": "2020-04-12T14:40:54.532Z",
+// "conditionId": 0,
+// "predictorId": 0,
+// "challengerId": 0,
+// "betAmount": 0,
+// "betLink": "string",
+// "winnersId": 0,
+// "loosersId": 0,
+// "amountWon": 0
+
+// Users id that are currently in the Db
+// 16, 20, 21, 22, 23
+
+
+

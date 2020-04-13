@@ -90,6 +90,31 @@ export class DashboardHomeComponent implements OnInit {
     return onGoingStakeGames;
   }
 
+  calculateTotalAmountStaked() {
+    let totalAmountStake = 0;
+    if(this.bets) {
+      this.bets.forEach(bet => {
+        if(bet.predictorId == this.user.id || bet.challengerId == this.user.id) {
+          totalAmountStake += bet.betAmount; 
+        }
+      });
+    }
+    return totalAmountStake;
+  }
+ 
+
+  calculateTotalAmountWon() {
+    let totalAmountWon = 0;
+    if (this.bets) {
+      this.bets.forEach(bet => {
+        if(bet.winnersId == this.user.id) {
+          totalAmountWon += bet.amountWon;
+        }
+      });
+    }
+    return totalAmountWon;
+  }
+
 }
 
 
@@ -127,6 +152,8 @@ export class DashboardHomeComponent implements OnInit {
 // loosersId: 0
 // looser: null
 // amountWon: 12000
+
+ 
 
 
 // User

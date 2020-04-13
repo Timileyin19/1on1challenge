@@ -25,6 +25,7 @@ import { GamesComponent } from './admin/games/games.component';
 import { AllGamesResolver } from './_resolvers/all-games.resolver';
 import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
 import { AllBetsResolver } from './_resolvers/all-bets.resolver';
+import { AllConditionsResolver } from './_resolvers/all-conditions.resolver';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -42,9 +43,9 @@ const routes: Routes = [
     children: [
       {path: 'dashboard', component: DashboardHomeComponent, resolve: { games: AllGamesResolver, sports: AllSportsResolver, leagues: AllLeaguesResolver, bets: AllBetsResolver } },
       {path: 'dashboard/account', component: DashboardMyAccountComponent },
-      {path: 'dashboard/challenge', component: DashboardChallengeComponent },
+      {path: 'dashboard/challenge', component: DashboardChallengeComponent, resolve: { users: AllUsersResolver, leagues: AllLeaguesResolver,  bets: AllBetsResolver, games: AllGamesResolver, conditions: AllConditionsResolver } },
       {path: 'dashboard/game', component: DashboardMyGamesComponent },
-      {path: 'dashboard/play', component: DashboardPlayComponent },
+      {path: 'dashboard/play', component: DashboardPlayComponent, resolve: { games: AllGamesResolver, leagues: AllLeaguesResolver, conditions: AllConditionsResolver } },
     ]
   },
   

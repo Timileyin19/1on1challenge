@@ -15,6 +15,10 @@ export class GamesService {
     return this.http.post<any[]>(this.baseUrl + 'bet/create' , bet, httpOptions);
   }
 
+  challengeBet(betId, challengerId) {
+    return this.http.put(this.baseUrl + 'bet/chellengebet/' + betId + '/challengerId/' + challengerId, {} ); 
+  }
+
   updateBet(id, bet) {
     return this.http.put(this.baseUrl + 'bet/update/' + id, bet);
   }

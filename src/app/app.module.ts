@@ -47,6 +47,7 @@ import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { AllGamesResolver } from './_resolvers/all-games.resolver';
 import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
 import { AllBetsResolver } from './_resolvers/all-bets.resolver';
+import { AllConditionsResolver } from './_resolvers/all-conditions.resolver';
 
 
 export function tokenGetter() {
@@ -107,6 +108,7 @@ export function tokenGetter() {
     AdminAuthGuard,
     UserService,
     AllBetsResolver,
+    AllConditionsResolver,
     AllGamesResolver,
     AllSportsResolver,
     AllUsersResolver,

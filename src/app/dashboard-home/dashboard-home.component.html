@@ -33,7 +33,7 @@
                          <div class="col-md-4 text-white">
                              <div class="card myCard">
                                  <div class="card-body">
-                                      <h3>#107,000</h3>
+                                      <h3 *ngIf="calculateTotalAmountStaked()"> {{ calculateTotalAmountStaked() | currency: 'NGN' }} </h3>
                                       <p><span><i class="icofont-money font-increase"></i></span><span class="float-right">Total Staked</span> </p>
                                  </div>
                                  <div class="progress progress-mini">
@@ -44,7 +44,8 @@
                          <div class="col-md-4 text-white">
                              <div class="card myCard">
                                  <div class="card-body">
-                                      <h3>#107,000</h3>
+                                      <h3 *ngIf="calculateTotalAmountWon()"> {{ calculateTotalAmountWon() | currency: 'NGN' }} </h3>
+                                      <h3 *ngIf="!calculateTotalAmountWon()"> NGN 0.00 </h3>
                                       <p><span><i class="icofont-win-trophy font-increase"></i></span><span class="float-right">Total Won</span> </p>
                                  </div>
                                  <div class="progress progress-mini">
@@ -129,13 +130,13 @@
                                   </table> -->
                                   
                                   <!-- Pagination -->
-                                  <ul class="myPagination pagination">
+                                  <!-- <ul class="myPagination pagination">
                                       <li class="page-item"><a class="page-link text-white" href="#">Previous</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">1</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">2</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">3</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">Next</a></li>
-                                  </ul>
+                                  </ul> -->
                              
                          </div>
                      </div>

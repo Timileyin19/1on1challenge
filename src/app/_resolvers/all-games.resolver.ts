@@ -17,7 +17,7 @@ export class AllGamesResolver implements Resolve<any[]> {
         return this.gameService.getGames()
             .pipe(
                     catchError(error => {
-                        this.alertify.error('Problem retriving data');
+                        this.alertify.error('Poor Network Strength');
                         this.router.navigate(['/home']);
                         return of(null);
                     })

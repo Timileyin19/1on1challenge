@@ -25,7 +25,7 @@
                          <div class="col-md-12">
                              <div class="dashboard-bg p-3">
                                   <table class="myTable table table-border-bottom text-white">
-                                      <thead>
+                                      <thead *ngIf="challengeableBets.length > 0">
                                           <tr>
                                               <th></th>
                                               <th>Competition</th>
@@ -36,19 +36,19 @@
                                               <th></th>
                                           </tr>
                                       </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>La Liga</td>
-                                              <td>Barcelona : Real Marid</td>
-                                              <td>21:00</td>
-                                              <td>Marcus23</td>
-                                              <td>Goalless Draw</td>
+                                      <tbody *ngIf="challengeableBets.length > 0">
+                                          <tr *ngFor="let c of challengeableBets; let i = index">
+                                              <td> {{ i+1 }} </td>
+                                              <td> {{ getLeagueById( getGameById(c.gameId).leagueId ).name }} </td>
+                                              <td> {{ getGameById(c.gameId).aTeam }} : {{ getGameById(c.gameId).bTeam }} </td>
+                                              <td> {{ getGameById(c.gameId).startTime | date: 'medium' }} </td>
+                                              <td> {{ getUserById(c.predictorId).username | titlecase }} </td>
+                                              <td> {{ getConditionById(c.conditionId).description }} </td>
                                               <td>
-                                                  <button class="btn btn-myInfo btn-sm" data-toggle="modal" data-target="#challengeGameModal">Challenge</button>
+                                                  <button class="btn btn-myInfo btn-sm" data-toggle="modal" data-target="#challengeGameModal" (click)="getBetToChallenge(c.id)">Challenge</button>
                                               </td>
                                           </tr>
-                                          <tr>
+                                          <!-- <tr>
                                               <td>2</td>
                                               <td>La Liga</td>
                                               <td>Barcelona : Real Marid</td>
@@ -91,18 +91,21 @@
                                               <td>
                                                   <button class="btn btn-myInfo btn-sm" data-toggle="modal" data-target="#challengeGameModal">Challenge</button>
                                               </td>
-                                          </tr>
-                                          
+                                          </tr> -->
                                       </tbody>
+                                    <div *ngIf="challengeableBets.length == 0">
+                                      <p class="text-white">Currently, all Predicted Games has Challenger, kindly predict a Game of choice using the button below</p> <br>
+                                      <button class="btn btn-myInfo btn-sm" [routerLink]="['/dashboard/play']">Predict a Game</button>
+                                    </div>
                                   </table>
                                   <!-- Pagination -->
-                                  <ul class="myPagination pagination">
+                                  <!-- <ul class="myPagination pagination">
                                       <li class="page-item"><a class="page-link text-white" href="#">Previous</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">1</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">2</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">3</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">Next</a></li>
-                                  </ul>
+                                  </ul> -->
                              
                          </div>
                      </div>
@@ -122,11 +125,17 @@
                 </button>
               </div>
               <div class="modal-body">
-                     <p>Are sure you want to challenge this Prediction made by Marcus23?</p>        
+                <div *ngIf="updatedBet">
+                    <p *ngIf="currentPredictor && updatedBet">Are sure you want to challenge this Prediction made by {{ currentPredictor.username | titlecase }} with {{ updatedBet.betAmount | currency:'NGN' }}?</p>        
+                    <p *ngIf="!currentPredictor">Are sure you want to challenge this Prediction with {{ updatedBet.betAmount | currency:'NGN' }}?</p>   
+                </div>  
+                <div *ngIf="!updatedBet">
+                    <img src="./../../assets/img/load.gif" alt="loading..." class="spinner">
+                </div>   
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-primary" (click)="confirmedChallenge()">Confirm</button>
               </div>
             </div>
           </div>
