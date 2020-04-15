@@ -65,7 +65,7 @@ export class DashboardPlayComponent implements OnInit {
 
       this.gameService.addBet(bet)
         .subscribe((res) => {
-          this.alertify.success('Bet created Successfully');
+          this.alertify.success('Bet placed Successfully');
           location.reload();
         }, error => {
           console.log('Error while creating Bet: ', error);

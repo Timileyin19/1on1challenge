@@ -107,7 +107,7 @@ export class GamesComponent implements OnInit {
     this.gameService.getGame(id)
       .subscribe(res => {
         this.myGame = res;
-        console.log(this.myGame, res);
+        // console.log(this.myGame, res);
       }, error => {
         this.alertify.error('Game Fetching Failed');
         console.log('Get Game Error', error);
@@ -117,7 +117,7 @@ export class GamesComponent implements OnInit {
   updateGame() {
     this.gameService.updateGame(this.myGame.id, this.myGame)
       .subscribe(res => {
-        console.log('Response of Game Update', res);
+        // console.log('Response of Game Update', res);
         this.alertify.success('Game Updated Successfully');
         location.reload();
       }, error => {

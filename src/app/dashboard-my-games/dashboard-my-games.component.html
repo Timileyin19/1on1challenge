@@ -24,7 +24,7 @@
                          <div class="col-md-12">
                              <div class="dashboard-bg p-3">
                                   <table class="myTable table table-responsive text-white">
-                                      <thead>
+                                      <thead *ngIf="userGames.length > 0">
                                           <tr>
                                               <th></th>
                                               <th>Sport</th>
@@ -36,20 +36,21 @@
                                               <th></th>
                                           </tr>
                                       </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td>1</td>
-                                              <td>Football</td>
-                                              <td>Premier League</td>
-                                              <td>Liverpool : Arsenal</td>
-                                              <td>Predictor</td>
-                                              <td>John19</td>
-                                              <td>Won</td>
+                                      <tbody *ngIf="userGames.length > 0">
+                                          <tr *ngFor="let g of userGames; let i = index">
+                                              <td> {{ i+1 }} </td>
+                                              <td> {{ getSportById(getGameById(g.gameId).sportId).name }} </td>
+                                              <td> {{ getLeagueById(getGameById(g.gameId).leagueId).name }} </td>
+                                              <td> {{ getGameById(g.gameId).aTeam }} : {{ getGameById(g.gameId).bTeam }} </td>
+                                              <td> {{ g.predictorId == user.id ? 'Predictor' : 'Challenger' }}  </td>  
+                                              <td *ngIf="getOtherUserById(g.predictorId, g.challengerId)"> {{ getOtherUserById(g.predictorId, g.challengerId).username | titlecase }} </td>
+                                              <td *ngIf="!getOtherUserById(g.predictorId, g.challengerId)"> Error </td>
+                                              <td> {{ setStatus(g.winnersId) }} </td>
                                               <td>
                                                   <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#deleteGameModal"><i class="icofont-trash text-white"></i></button>
                                               </td>
                                           </tr>
-                                          <tr>
+                                          <!-- <tr>
                                               <td>2</td>
                                               <td>Football</td>
                                               <td>Premier League</td>
@@ -96,18 +97,18 @@
                                               <td>
                                                   <button class="btn myBtn btn-sm" data-toggle="modal" data-target="#deleteGameModal"><i class="icofont-trash text-white"></i></button>
                                               </td>
-                                          </tr>
+                                          </tr> -->
                                          
                                       </tbody>
                                   </table>
                                   <!-- Pagination -->
-                                  <ul class="myPagination pagination">
+                                  <!-- <ul class="myPagination pagination">
                                       <li class="page-item"><a class="page-link text-white" href="#">Previous</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">1</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">2</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">3</a></li>
                                       <li class="page-item"><a class="page-link text-white" href="#">Next</a></li>
-                                  </ul>
+                                  </ul> -->
                              
                          </div>
                      </div>
@@ -131,7 +132,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger">Confirm</button>
+                <button type="button" class="btn btn-danger" (click)="deleteBetFromHistory()">Confirm</button>
               </div>
             </div>
           </div>

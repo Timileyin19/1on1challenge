@@ -44,10 +44,11 @@ const routes: Routes = [
       {path: 'dashboard', component: DashboardHomeComponent, resolve: { games: AllGamesResolver, sports: AllSportsResolver, leagues: AllLeaguesResolver, bets: AllBetsResolver } },
       {path: 'dashboard/account', component: DashboardMyAccountComponent },
       {path: 'dashboard/challenge', component: DashboardChallengeComponent, resolve: { users: AllUsersResolver, leagues: AllLeaguesResolver,  bets: AllBetsResolver, games: AllGamesResolver, conditions: AllConditionsResolver } },
-      {path: 'dashboard/game', component: DashboardMyGamesComponent },
+      {path: 'dashboard/game', component: DashboardMyGamesComponent, resolve: { sports: AllSportsResolver, leagues: AllLeaguesResolver, games: AllGamesResolver, users: AllUsersResolver, bets: AllBetsResolver } },
       {path: 'dashboard/play', component: DashboardPlayComponent, resolve: { games: AllGamesResolver, leagues: AllLeaguesResolver, conditions: AllConditionsResolver } },
     ]
   },
+
   
 
   // Admin Route

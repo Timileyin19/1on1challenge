@@ -40,9 +40,13 @@ export class DashboardMyAccountComponent implements OnInit {
   }
 
   updateProfile() {
-    // console.log("ID:", id);
-    console.log("Update Details:", this.detailedUser);
-    this.userService.updateUser(this.detailedUser);
+    this.userService.updateUser(this.detailedUser)
+      .subscribe(res => {
+        this.alertify.success('Profile Updated Successfully');
+        location.reload();
+      }, error => {
+        console.log('User update error: ', error);
+      });
   }
 
 }

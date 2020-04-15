@@ -59,15 +59,6 @@ export class DashboardChallengeComponent implements OnInit {
 
   confirmedChallenge() {
     this.updatedBet.challengerId = this.user.id;
-    // this.gameService.updateBet(this.updatedBet.id, this.updatedBet)
-    //   .subscribe(res => {
-    //     console.log('Update Bet response: ', res);
-    //     this.alertify.success('Bet challenged successfully');
-    //     setTimeout(() => { location.reload() }, 5);
-    //   }, error => {
-    //     console.log('Error while updating the Bet: ', error);
-    //   })
-
     this.gameService.challengeBet(this.updatedBet.id, this.user.id)
       .subscribe(res => {
         console.log('Challenge Bet response: ', res);
