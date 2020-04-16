@@ -31,6 +31,11 @@ export class GamesService {
     return this.http.get(this.baseUrl + 'bet/getbet/' + id);
   }
 
+  // /api/Bet/setwinner/{id}/winner/{winnerId}
+  setBetWinner(betId, winnerId) {
+    return this.http.put(this.baseUrl + 'bet/setwinner/' + betId + '/winner/' + winnerId, {});
+  }
+
   deleteBet(id) {
     return this.http.delete(this.baseUrl + 'game/delete/' + id);
   }

@@ -1,0 +1,159 @@
+<div class="dashboardBody">
+
+  <!-- Top Navigation Bar -->
+  <app-navbar></app-navbar>
+
+  <div class="container">
+    <h3 class="text-white text-center">BETS</h3>
+     
+    <!-- Angular Material Table -->
+    <div class="search-div">
+      <!-- Admin does not have the Priviledge to create Bet -->
+      <!-- <button mat-raised-button data-toggle="modal" data-target="#addGameModal">
+        <mat-icon>add</mat-icon>Create Game
+      </button> -->
+      <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- Game Column -->
+        <ng-container matColumnDef="game">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Game </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ getGameById(bet.gameId) ?  getGameById(bet.gameId).aTeam : 'Team A' }} : {{ getGameById(bet.gameId) ? getGameById(bet.gameId).bTeam : 'Team B' }} </mat-cell>
+        </ng-container>
+    
+        <!-- Game-Time Column -->
+        <ng-container matColumnDef="gameTime">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Game Time </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ getGameById(bet.gameId).startTime | date:'medium' }} </mat-cell>
+        </ng-container>
+    
+        <!-- Predictor Column -->
+        <ng-container matColumnDef="predictor">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Predictor </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ getUserById(bet.predictorId) ? getUserById(bet.predictorId).username : 'Predictor'  }} </mat-cell>
+        </ng-container>
+
+        <!-- Challenger Column -->
+        <ng-container matColumnDef="challenger">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Challenger </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ getUserById(bet.challengerId) ? getUserById(bet.challengerId).username : 'loading'  }} </mat-cell>
+        </ng-container>
+
+         <!-- Condition Column -->
+        <ng-container matColumnDef="condition">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Condition </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ getConditionById(bet.conditionId) ? getConditionById(bet.conditionId).description : 'Condition' }} </mat-cell>
+        </ng-container>
+
+         <!-- betAmount Column -->
+         <ng-container matColumnDef="betAmount">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Bet Amount </mat-header-cell>
+          <mat-cell *matCellDef="let bet">{{ bet.betAmount | currency:'NGN' }}</mat-cell>
+        </ng-container> 
+        
+        <!-- Winner Column -->
+        <ng-container matColumnDef="winner">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Winner </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ getUserById(bet.winnersId) ? getUserById(bet.winnersId).username : 'Undecided' }} </mat-cell>
+        </ng-container>
+
+        <!-- Amount Won Column -->
+        <ng-container matColumnDef="amountWon">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Winning Amount </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> {{ bet.amountWon | currency:'NGN' }} </mat-cell>
+        </ng-container>
+
+        <!-- Set-Winner Column -->
+        <ng-container matColumnDef="setWinner">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Set Winner </mat-header-cell>
+          <mat-cell *matCellDef="let bet"> 
+            <button [disabled]="bet.winnersId != 0" class="btn myBtn btn-sm" data-toggle="modal" data-target="#setWinnerModal" (click)="setFormUp(bet)">Set Wiiner</button>  
+          </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: tableColumns;"></mat-row>
+
+      </mat-table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+    </div>
+
+
+  </div>   <!-- Container div -->
+</div>   <!-- dashboardBody div -->
+
+
+<!-- Set Winner Modal -->
+<div class="modal fade" id="setWinnerModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Set the Winner of Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="!setWinnerForm.game">
+          <img class="spinner" src="../../../assets/img/load.gif" alt="loading...">
+        </div>
+        <form *ngIf="setWinnerForm.game" #setWinnerForm="ngForm" (ngSubmit)="setWinner()">
+          <div class="row">
+            <div class="col-md-12">
+                <div class="form-group" *ngIf="game">
+                  <label for="team">Game</label>
+                  <input type="text" name="team" value="{{ game ? game.aTeam : 'Team A' }} : {{ game ? game.bTeam : 'Team B' }}" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group" *ngIf="condition">
+                <label for="condition">Condition</label>
+                <input type="text" name="condition" value="{{ condition.description }}" class="form-control" readonly>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" *ngIf="predictor">
+                <label for="predictor">Predictor</label>
+                <input type="text" name="predictor" value="{{ predictor.username }}" class="form-control" readonly>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" *ngIf="challenger">
+                <label for="challenger">Challenger</label>
+                <input type="text" name="challenger" value="{{ challenger.username  }}" class="form-control" readonly>
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="winner">Set Winner</label>
+                <select class="form-control" name="winner" [(ngModel)]="winner" required>
+                  <option value="" [disabled]></option>
+                  <option value='predictor'>Predictor</option>
+                  <option value='challenger'>Challenger</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            <div class="col-md-9">
+              <button [disabled]="!setWinnerForm.valid"  type="submit" class="btn btn-myInfo btn-block">Set Winner</button>
+            </div>
+          </div>
+      </form>       
+      </div>
+    </div>
+  </div>
+</div>

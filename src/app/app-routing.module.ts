@@ -26,6 +26,7 @@ import { AllGamesResolver } from './_resolvers/all-games.resolver';
 import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
 import { AllBetsResolver } from './_resolvers/all-bets.resolver';
 import { AllConditionsResolver } from './_resolvers/all-conditions.resolver';
+import { BetsComponent } from './admin/bets/bets.component';
 
 const routes: Routes = [
   // {path: '', component: LoginComponent },
@@ -58,6 +59,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AdminAuthGuard],
     children: [
+      { path: 'admin/bets', component: BetsComponent, resolve: { bets: AllBetsResolver, conditions: AllConditionsResolver, games: AllGamesResolver, users: AllUsersResolver } },
       { path: 'admin/dashboard', component: AdminDashboardComponent, resolve: { sports: AllSportsResolver } },
       { path: 'admin/games', component: GamesComponent, resolve: { games: AllGamesResolver, sports: AllSportsResolver, leagues: AllLeaguesResolver } },
       { path: 'admin/users', component: UsersComponent, resolve: { users: AllUsersResolver} },

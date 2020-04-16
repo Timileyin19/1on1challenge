@@ -48,6 +48,7 @@ import { AllGamesResolver } from './_resolvers/all-games.resolver';
 import { AllLeaguesResolver } from './_resolvers/all-leagues.resolver';
 import { AllBetsResolver } from './_resolvers/all-bets.resolver';
 import { AllConditionsResolver } from './_resolvers/all-conditions.resolver';
+import { BetsComponent } from './admin/bets/bets.component';
 
 
 export function tokenGetter() {
@@ -73,7 +74,8 @@ export function tokenGetter() {
     AdminLoginComponent,
     AdminDashboardComponent,
     SidebarComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    BetsComponent
   ],
   imports: [
     BrowserModule,
